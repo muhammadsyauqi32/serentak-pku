@@ -62,20 +62,11 @@ export default function HeroSection({ onOpenRegister, onOpenGuidebook }: HeroSec
       </div>
 
       <div className="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center z-10">
-        {/* Institutional Event Badge */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#58000E]/80 border border-[#C5A059]/40 backdrop-blur-md mb-6 shadow-xl"
-        >
-          <Landmark className="w-4 h-4 text-[#E5C378]" />
-          <span className="text-xs font-semibold tracking-wider text-[#E5C378] uppercase">Ajang Kompetisi Mahasiswa Perguruan Tinggi 2026</span>
-        </motion.div>
+
 
         {/* Main Event Title */}
         <motion.h1 initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 0.1 }} className="font-serif text-5xl sm:text-7xl md:text-8xl font-black tracking-tight leading-none mb-4">
-          <span className="gold-gradient-text drop-shadow-md">SERENTAK</span>
+          <span className="gold-gradient-text drop-shadow-md">SERENTAK 5.0 </span>
         </motion.h1>
 
         {/* Subtitle */}
@@ -113,7 +104,7 @@ export default function HeroSection({ onOpenRegister, onOpenGuidebook }: HeroSec
         </motion.div>
 
         {/* Countdown Timer Widget */}
-        <motion.div
+        {/* <motion.div
           initial={{ opacity: 0, scale: 0.95 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.7, delay: 0.5 }}
@@ -145,34 +136,8 @@ export default function HeroSection({ onOpenRegister, onOpenGuidebook }: HeroSec
               <span className="text-[10px] sm:text-xs text-[#FAF6F0]/70 uppercase tracking-wider">Detik</span>
             </div>
           </div>
-        </motion.div>
+        </motion.div> */}
 
-        {/* Feature Highlights Grid */}
-        <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 0.6 }} className="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-6 border-t border-[#C5A059]/20 text-left">
-          <div className="flex items-center gap-3 bg-[#58000E]/30 p-3.5 rounded-xl border border-[#C5A059]/20">
-            <Trophy className="w-8 h-8 text-[#E5C378] shrink-0" />
-            <div>
-              <span className="block text-xs text-[#C5A059] uppercase tracking-wider font-semibold">Total Hadiah</span>
-              <span className="text-sm font-serif font-bold text-[#FAF6F0]">Jutaan Rupiah + Trofi</span>
-            </div>
-          </div>
-
-          <div className="flex items-center gap-3 bg-[#58000E]/30 p-3.5 rounded-xl border border-[#C5A059]/20">
-            <Users className="w-8 h-8 text-[#E5C378] shrink-0" />
-            <div>
-              <span className="block text-xs text-[#C5A059] uppercase tracking-wider font-semibold">Peserta Target</span>
-              <span className="text-sm font-serif font-bold text-[#FAF6F0]">Mahasiswa Seluruh Indonesia</span>
-            </div>
-          </div>
-
-          <div className="flex items-center gap-3 bg-[#58000E]/30 p-3.5 rounded-xl border border-[#C5A059]/20">
-            <ShieldCheck className="w-8 h-8 text-[#E5C378] shrink-0" />
-            <div>
-              <span className="block text-xs text-[#C5A059] uppercase tracking-wider font-semibold">Fasilitas</span>
-              <span className="text-sm font-serif font-bold text-[#FAF6F0]">E-Sertifikat Nasional</span>
-            </div>
-          </div>
-        </motion.div>
       </div>
     </section>
   );

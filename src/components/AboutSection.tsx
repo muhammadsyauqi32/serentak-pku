@@ -90,62 +90,7 @@ export default function AboutSection() {
           </motion.div>
 
           {/* Right Visual Frame Card */}
-          <motion.div
-            initial={{ opacity: 0, x: 30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="lg:col-span-5"
-          >
-            <div className="relative p-8 rounded-3xl bg-gradient-to-b from-[#3D030D] to-[#58000E] text-[#FAF6F0] shadow-2xl border-2 border-[#C5A059]/40">
-              <div className="absolute top-4 right-4 text-[#C5A059]/30">
-                <Sparkles className="w-16 h-16" />
-              </div>
 
-              <div className="inline-block px-3 py-1 rounded-md bg-[#C5A059]/20 text-[#E5C378] text-xs font-semibold uppercase tracking-wider mb-4 border border-[#C5A059]/30">
-                Identitas Acara
-              </div>
-
-              <h4 className="font-serif text-2xl font-bold text-[#E5C378] mb-3">
-                Komitmen Kualitas & Profesionalisme
-              </h4>
-
-              <p className="text-xs sm:text-sm text-[#FAF6F0]/85 leading-relaxed mb-8">
-                Diselenggarakan secara institusional oleh Organisasi Kemahasiswaan dengan mengedepankan objektivitas, integritas, dan keindahan karya.
-              </p>
-
-              {/* Stat Counters inside Card */}
-              <div className="grid grid-cols-2 gap-4 border-t border-[#C5A059]/30 pt-6">
-                <div>
-                  <span className="block font-serif text-3xl font-black text-[#E5C378]">2+</span>
-                  <span className="text-[11px] text-[#FAF6F0]/70 uppercase tracking-wider font-medium">
-                    Cabang Utama Lomba
-                  </span>
-                </div>
-
-                <div>
-                  <span className="block font-serif text-3xl font-black text-[#E5C378]">100%</span>
-                  <span className="text-[11px] text-[#FAF6F0]/70 uppercase tracking-wider font-medium">
-                    Objektif & Transparan
-                  </span>
-                </div>
-
-                <div>
-                  <span className="block font-serif text-3xl font-black text-[#E5C378]">SKKM</span>
-                  <span className="text-[11px] text-[#FAF6F0]/70 uppercase tracking-wider font-medium">
-                    Portofolio Diakui
-                  </span>
-                </div>
-
-                <div>
-                  <span className="block font-serif text-3xl font-black text-[#E5C378]">Nasional</span>
-                  <span className="text-[11px] text-[#FAF6F0]/70 uppercase tracking-wider font-medium">
-                    Skala Jangkauan
-                  </span>
-                </div>
-              </div>
-            </div>
-          </motion.div>
         </div>
 
         {/* 3 Pillars Cards */}
