@@ -9,6 +9,38 @@ interface HeroSectionProps {
   onOpenGuidebook: () => void;
 }
 
+function HeroMascot({ sizeClass }: { sizeClass: string }) {
+  return (
+    <div className="relative flex flex-col items-center justify-center">
+      {/* Ambient Dark Shadow Atmosphere behind Mascot */}
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[75%] h-[75%] bg-[#1A0B0B]/80 rounded-full blur-3xl pointer-events-none -z-10" />
+
+      {/* Floating Idle Mascot Container */}
+      <motion.div
+        animate={{
+          y: [0, -14, 0],
+          rotate: [-1, 1, -1],
+        }}
+        transition={{
+          duration: 3,
+          repeat: Infinity,
+          ease: "easeInOut",
+        }}
+        className={`relative ${sizeClass} flex items-center justify-center py-4 group z-10`}
+      >
+        <Image
+          src="/images/mascot_stand.png"
+          alt="Maskot SERENTAK 5.0 X RBB 2026"
+          fill
+          sizes="(max-width: 768px) 320px, 550px"
+          className="object-contain drop-shadow-[0_20px_35px_rgba(0,0,0,0.7)] transition-transform duration-300 group-hover:scale-105"
+          priority
+        />
+      </motion.div>
+    </div>
+  );
+}
+
 export default function HeroSection({ onOpenRegister, onOpenGuidebook }: HeroSectionProps) {
   return (
     <section id="home" className="relative min-h-screen pt-28 pb-20 md:pt-36 md:pb-28 flex items-center justify-center bg-[#5A0B14] text-[#F7F1E8] overflow-hidden border-b border-[#C5A059]/30">
@@ -34,13 +66,10 @@ export default function HeroSection({ onOpenRegister, onOpenGuidebook }: HeroSec
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 z-10 w-full">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center">
 
-          {/* Left Column: Title, Subtitle, Description, CTA Buttons */}
+          {/* Left Column: Title, Subtitle, [Mobile Mascot], Description, CTA Buttons */}
           <div className="lg:col-span-7 flex flex-col items-center lg:items-start text-center lg:text-left">
 
-            {/* Event Header Pill (Space Grotesk) */}
-
-
-            {/* Main Event Title (Bungee Font - Single h1 on page) */}
+            {/* 1. Main Event Title */}
             <motion.h1
               initial={{ opacity: 0, y: 25 }}
               animate={{ opacity: 1, y: 0 }}
@@ -50,7 +79,7 @@ export default function HeroSection({ onOpenRegister, onOpenGuidebook }: HeroSec
               SERENTAK 5.0 X RBB 2026
             </motion.h1>
 
-            {/* Subtitle / Theme Tagline */}
+            {/* 2. Subtitle / Theme Tagline */}
             <motion.p
               initial={{ opacity: 0, y: 15 }}
               animate={{ opacity: 1, y: 0 }}
@@ -60,7 +89,17 @@ export default function HeroSection({ onOpenRegister, onOpenGuidebook }: HeroSec
               "Politrik: Seni Berkuasa dengan Propaganda"
             </motion.p>
 
-            {/* Description (Inter Font) */}
+            {/* 3. Mobile Mascot Showcase (Layout on Mobile: Judul -> Tema -> Mascot -> Deskripsi -> CTA) */}
+            <motion.div
+              initial={{ opacity: 0, scale: 0.95 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.7, delay: 0.25 }}
+              className="lg:hidden flex flex-col items-center justify-center my-2 w-full"
+            >
+              <HeroMascot sizeClass="w-64 h-64 sm:w-80 sm:h-80" />
+            </motion.div>
+
+            {/* 4. Description */}
             <motion.p
               initial={{ opacity: 0, y: 15 }}
               animate={{ opacity: 1, y: 0 }}
@@ -70,7 +109,7 @@ export default function HeroSection({ onOpenRegister, onOpenGuidebook }: HeroSec
               Program kerja Departemen Kajian Aksi dan Strategis Ormawa Eksekutif PKU yang menghadirkan ruang kompetisi mahasiswa IPB, literasi, dan ekspresi kritis mahasiswa melalui ajang lomba mahasiswa 2026.
             </motion.p>
 
-            {/* CTA Buttons (Space Grotesk) */}
+            {/* 5. CTA Buttons */}
             <motion.div
               initial={{ opacity: 0, y: 15 }}
               animate={{ opacity: 1, y: 0 }}
@@ -97,43 +136,14 @@ export default function HeroSection({ onOpenRegister, onOpenGuidebook }: HeroSec
             </motion.div>
           </div>
 
-          {/* Right Column: Hero Mascot Showcase */}
+          {/* Right Column: Desktop Hero Mascot Showcase */}
           <motion.div
             initial={{ opacity: 0, scale: 0.95, x: 20 }}
             animate={{ opacity: 1, scale: 1, x: 0 }}
             transition={{ duration: 0.7, delay: 0.2 }}
-            className="lg:col-span-5 flex flex-col items-center justify-center relative py-4"
+            className="hidden lg:flex lg:col-span-5 flex-col items-center justify-center relative py-4"
           >
-            {/* Ambient Dark Shadow Atmosphere behind Mascot */}
-            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[75%] h-[75%] bg-[#1A0B0B]/80 rounded-full blur-3xl pointer-events-none -z-10" />
-
-            {/* Floating Idle Mascot Container */}
-            <div className="relative flex flex-col items-center justify-center">
-              <motion.div
-                animate={{
-                  y: [0, -14, 0],
-                  rotate: [-1, 1, -1],
-                }}
-                transition={{
-                  duration: 3,
-                  repeat: Infinity,
-                  ease: "easeInOut",
-                }}
-                className="relative w-80 h-80 sm:w-[450px] sm:h-[450px] lg:w-[550px] lg:h-[550px] flex items-center justify-center py-6 group z-10"
-              >
-                <Image
-                  src="/images/mascot_stand.png"
-                  alt="Maskot SERENTAK 5.0 X RBB 2026"
-                  fill
-                  sizes="(max-width: 768px) 320px, 550px"
-                  className="object-contain drop-shadow-[0_20px_35px_rgba(0,0,0,0.7)] transition-transform duration-300 group-hover:scale-105"
-                  priority
-                />
-              </motion.div>
-
-              {/* Dynamic Floor Shadow under Floating Mascot */}
-
-            </div>
+            <HeroMascot sizeClass="w-80 h-80 sm:w-[450px] sm:h-[450px] lg:w-[550px] lg:h-[550px]" />
           </motion.div>
 
         </div>
