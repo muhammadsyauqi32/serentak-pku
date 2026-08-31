@@ -48,49 +48,55 @@ export default function FAQSection() {
   );
 
   return (
-    <section id="faq" className="py-24 bg-[#F7F1E8] relative text-[#1F1F1F] border-b border-[#C5A059]/20">
+    <section id="faq" className="py-24 bg-[#F7F1E8] relative text-[#1F1F1F] border-b border-[#C5A059]/30">
+      {/* Paper texture overlay */}
+      <div className="absolute inset-0 bg-paper-texture opacity-40 pointer-events-none" />
+
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        {/* Section Header (Requirement 4: <h2>FAQ</h2>) */}
-        <div className="text-center max-w-3xl mx-auto mb-12">
-          <h2 className="font-heading text-3xl sm:text-4xl md:text-5xl text-[#5A0B14] mb-4 uppercase">
-            FAQ
-          </h2>
-          <p className="font-body text-sm sm:text-base text-[#6B3E2E]">
-            Pertanyaan Sering Diajukan Seputar SERENTAK 5.0 X RBB 2026
-          </p>
-          <div className="w-20 h-1 bg-[#C5A059] mx-auto rounded-full mt-6" />
+        
+        {/* Section Editorial Header */}
+        <div className="flex flex-col md:flex-row md:items-end justify-between border-b-2 border-[#5A0B14] pb-6 mb-12 gap-4">
+          <div>
+            <div className="flex items-center gap-2 text-xs font-subheading font-bold uppercase tracking-widest text-[#5A0B14] mb-2">
+              <HelpCircle className="w-4 h-4 text-[#5A0B14]" />
+              <span>TANYA JAWAB DOKUMEN & KANATOR</span>
+            </div>
+            <h2 className="font-heading text-4xl sm:text-5xl md:text-6xl text-[#5A0B14] uppercase tracking-tight">
+              Pertanyaan (FAQ)
+            </h2>
+          </div>
+          <span className="font-subheading text-xs font-bold uppercase tracking-widest text-[#6B3E2E]">
+            BAGIAN V — PERTANYAAN UMUM
+          </span>
         </div>
 
-        {/* Search Bar */}
-        <div className="relative mb-8 font-subheading">
+        {/* Minimal Search Bar */}
+        <div className="relative mb-10 font-subheading">
           <Search className="w-5 h-5 text-[#5A0B14] absolute left-4 top-1/2 -translate-y-1/2" />
           <input
             type="text"
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
             placeholder="Cari pertanyaan... (contoh: jadwal, debat, orasi, RBB)"
-            className="w-full pl-12 pr-4 py-3.5 rounded-xl bg-[#FFFDF9] border border-[#C5A059]/30 focus:border-[#5A0B14] text-sm text-[#1F1F1F] shadow-sm outline-none transition-colors placeholder:text-[#6B3E2E]/60"
+            className="w-full pl-12 pr-4 py-4 bg-[#FFFDF9] border border-[#C5A059]/40 text-sm text-[#1F1F1F] shadow-sm outline-none focus:border-[#5A0B14] transition-colors placeholder:text-[#6B3E2E]/60 font-body"
           />
         </div>
 
-        {/* Accordions List */}
-        <div className="space-y-4">
+        {/* Editorial Accordion Row List (No floating SaaS cards) */}
+        <div className="border-t border-[#C5A059]/40">
           {filteredFaqs.length > 0 ? (
             filteredFaqs.map((faq, idx) => {
               const isOpen = openIndex === idx;
 
               return (
-                <div
-                  key={idx}
-                  className="rounded-xl bg-[#FFFDF9] border border-[#C5A059]/30 overflow-hidden shadow-sm transition-colors"
-                >
+                <div key={idx} className="border-b border-[#C5A059]/30">
                   <button
                     onClick={() => setOpenIndex(isOpen ? null : idx)}
-                    className="w-full p-5 text-left flex items-center justify-between gap-4 font-subheading font-bold text-sm sm:text-base text-[#1F1F1F] hover:text-[#5A0B14] transition-colors cursor-pointer"
+                    className="w-full py-5 text-left flex items-center justify-between gap-4 font-subheading font-bold text-sm sm:text-base text-[#1F1F1F] hover:text-[#5A0B14] transition-colors cursor-pointer"
                   >
                     <span className="flex items-center gap-3">
-                      <span className="w-2 h-2 rounded-full bg-[#5A0B14] shrink-0" />
-                      {faq.question}
+                      <span className="font-heading text-xs text-[#C5A059]">0{idx + 1}</span>
+                      <span className="uppercase tracking-wide">{faq.question}</span>
                     </span>
                     <ChevronDown
                       className={`w-5 h-5 text-[#5A0B14] shrink-0 transition-transform duration-300 ${
@@ -107,7 +113,7 @@ export default function FAQSection() {
                         exit={{ height: 0, opacity: 0 }}
                         transition={{ duration: 0.3 }}
                       >
-                        <div className="px-5 pb-5 pt-1 font-body text-xs sm:text-sm text-[#6B3E2E] leading-relaxed border-t border-[#C5A059]/20">
+                        <div className="pb-6 pt-1 font-body text-xs sm:text-sm text-[#6B3E2E] leading-relaxed pl-8">
                           {faq.answer}
                         </div>
                       </motion.div>

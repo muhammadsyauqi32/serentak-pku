@@ -40,70 +40,41 @@ export default function TalentSection() {
   ];
 
   return (
-    <section id="sayembara" className="py-20 bg-[#1A0B0B] relative text-[#F7F1E8] border-b border-[#C5A059]/30 overflow-hidden">
-      {/* Editorial Grid Background */}
-      <div className="absolute inset-0 bg-editorial-grid opacity-15 pointer-events-none" />
-
+    <section id="sayembara" className="py-24 bg-[#1A0B0B] relative text-[#F7F1E8] border-b border-[#C5A059]/40 overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
-        {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto mb-14">
-          <motion.div
-            initial={{ opacity: 0, y: 15 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#5A0B14] border border-[#C5A059]/40 mb-4 font-subheading"
-          >
-            <Radio className="w-4 h-4 text-[#C5A059]" />
-            <span className="text-xs font-bold uppercase tracking-widest text-[#C5A059]">
-              Open Registration
-            </span>
-          </motion.div>
-
-          <motion.h2
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.1 }}
-            className="font-heading text-3xl sm:text-4xl md:text-5xl text-[#C5A059] mb-3 uppercase tracking-wide drop-shadow-sm"
-          >
-            Sayembara MC & Moderator
-          </motion.h2>
-
-          {/* Locked Date Highlight Banner */}
+        {/* Section Editorial Header */}
+        <div className="flex flex-col md:flex-row md:items-end justify-between border-b border-[#C5A059]/40 pb-6 mb-16 gap-4">
+          <div>
+            <div className="flex items-center gap-2 text-xs font-subheading font-bold uppercase tracking-widest text-[#C5A059] mb-2">
+              <Radio className="w-4 h-4 text-[#C5A059]" />
+              <span>OPEN REGISTRATION • SAYEMBARA TALENT</span>
+            </div>
+            <h2 className="font-heading text-4xl sm:text-5xl md:text-6xl text-[#C5A059] uppercase tracking-tight">
+              Sayembara MC & Moderator
+            </h2>
+          </div>
+          
           {!IS_REGISTRATION_OPEN && (
-            <motion.div
-              initial={{ opacity: 0, scale: 0.95 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.15 }}
-              className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-[#5A0B14]/80 border border-[#C5A059]/50 text-[#C5A059] font-subheading text-xs sm:text-sm font-bold uppercase tracking-wider mb-6 shadow-md"
-            >
+            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 bg-[#5A0B14] border border-[#C5A059]/50 text-[#C5A059] font-subheading text-xs font-bold uppercase tracking-wider">
               <Calendar className="w-4 h-4 shrink-0 text-[#C5A059]" />
-              <span>Pendaftaran Dibuka 3 September 2026</span>
-            </motion.div>
+              <span>PENDAFTARAN DIBUKA 3 SEPTEMBER 2026</span>
+            </div>
           )}
-
-          <motion.div
-            initial={{ opacity: 0, y: 15 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.2 }}
-            className="font-body text-xs sm:text-sm md:text-base text-[#F7F1E8]/85 leading-relaxed space-y-3 max-w-2xl mx-auto text-balance"
-          >
-            <p>
-              SERENTAK 5.0 X RBB 2026 membuka kesempatan bagi mahasiswa untuk berpartisipasi sebagai MC dan Moderator dalam rangkaian kegiatan.
-            </p>
-            <p>
-              Tunjukkan kemampuan public speaking, komunikasi, dan kemampuan membangun ruang diskusi melalui kesempatan ini.
-            </p>
-          </motion.div>
-
-          <div className="w-20 h-1 bg-[#C5A059] mx-auto rounded-full mt-8" />
         </div>
 
-        {/* Program Cards Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+        {/* Lead Editorial Description */}
+        <div className="max-w-3xl mb-14 font-body text-sm sm:text-base text-[#F7F1E8]/90 leading-relaxed space-y-3">
+          <p>
+            SERENTAK 5.0 X RBB 2026 membuka kesempatan bagi mahasiswa untuk berpartisipasi sebagai MC dan Moderator dalam rangkaian kegiatan.
+          </p>
+          <p className="font-medium text-[#C5A059]">
+            Tunjukkan kemampuan public speaking, komunikasi, dan kemampuan membangun ruang diskusi melalui kesempatan ini.
+          </p>
+        </div>
+
+        {/* Program Editorial Spread Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
           {talents.map((item, idx) => {
             const Icon = item.icon;
             return (
@@ -113,33 +84,31 @@ export default function TalentSection() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.4, delay: idx * 0.1 }}
-                className={`p-8 rounded-2xl bg-[#5A0B14]/40 border ${
-                  IS_REGISTRATION_OPEN ? "border-[#C5A059]/40 hover:border-[#C5A059]" : "border-[#C5A059]/30"
-                } shadow-xl backdrop-blur-sm transition-all duration-300 flex flex-col justify-between group relative overflow-hidden`}
+                className="p-8 sm:p-10 bg-[#5A0B14]/30 border border-[#C5A059]/40 hover:border-[#C5A059] transition-all duration-300 flex flex-col justify-between relative"
               >
                 <div>
-                  <div className="flex items-center justify-between mb-6">
-                    <span className="font-subheading px-3 py-1 rounded-md bg-[#1A0B0B] border border-[#C5A059]/30 text-[#C5A059] text-xs font-bold uppercase tracking-wider">
+                  <div className="flex items-center justify-between border-b border-[#C5A059]/30 pb-4 mb-6">
+                    <span className="font-subheading text-xs font-bold uppercase tracking-widest text-[#C5A059]">
                       {item.badge}
                     </span>
 
                     {!IS_REGISTRATION_OPEN ? (
-                      <div className="flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-[#1A0B0B]/80 border border-[#C5A059]/40 text-[#C5A059] text-[11px] font-subheading font-bold uppercase tracking-wider">
+                      <div className="flex items-center gap-1.5 px-2.5 py-1 bg-[#1A0B0B] border border-[#C5A059]/40 text-[#C5A059] text-[11px] font-subheading font-bold uppercase tracking-wider">
                         <Lock className="w-3.5 h-3.5 text-[#C5A059]" />
-                        <span>Segera Hadir</span>
+                        <span>SEGERA HADIR</span>
                       </div>
                     ) : (
-                      <div className="w-10 h-10 rounded-xl bg-[#1A0B0B] border border-[#C5A059] flex items-center justify-center text-[#C5A059]">
-                        <Icon className="w-5 h-5" />
+                      <div className="w-8 h-8 bg-[#1A0B0B] border border-[#C5A059] flex items-center justify-center text-[#C5A059]">
+                        <Icon className="w-4 h-4" />
                       </div>
                     )}
                   </div>
 
-                  <div className="flex items-center gap-3 mb-3">
-                    <div className="p-2.5 rounded-lg bg-[#1A0B0B] border border-[#C5A059]/40 text-[#C5A059] shrink-0">
-                      <Icon className="w-5 h-5" />
+                  <div className="flex items-center gap-3 mb-4">
+                    <div className="p-3 bg-[#1A0B0B] border border-[#C5A059]/40 text-[#C5A059] shrink-0">
+                      <Icon className="w-6 h-6" />
                     </div>
-                    <h3 className="font-subheading text-2xl font-bold text-[#F7F1E8] uppercase tracking-wide">
+                    <h3 className="font-subheading text-2xl sm:text-3xl font-bold text-[#F7F1E8] uppercase tracking-wide">
                       {item.title}
                     </h3>
                   </div>
@@ -156,7 +125,7 @@ export default function TalentSection() {
                       href={item.link}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="w-full py-3.5 rounded-lg bg-[#C5A059] hover:bg-[#E5C378] text-[#1A0B0B] font-bold text-xs uppercase tracking-widest shadow-md transition-colors flex items-center justify-center gap-2 cursor-pointer border border-[#C5A059]"
+                      className="w-full py-3.5 bg-[#C5A059] hover:bg-[#E5C378] text-[#1A0B0B] font-bold text-xs uppercase tracking-widest transition-colors flex items-center justify-center gap-2 cursor-pointer border border-[#C5A059]"
                     >
                       <span>{item.buttonActiveText}</span>
                       <ArrowUpRight className="w-4 h-4" />
@@ -164,7 +133,7 @@ export default function TalentSection() {
                   ) : (
                     <button
                       disabled
-                      className="w-full py-3.5 rounded-lg bg-[#1A0B0B]/60 text-[#F7F1E8]/40 border border-[#C5A059]/20 font-bold text-xs uppercase tracking-widest flex items-center justify-center gap-2 cursor-not-allowed select-none"
+                      className="w-full py-3.5 bg-[#1A0B0B] text-[#F7F1E8]/40 border border-[#C5A059]/20 font-bold text-xs uppercase tracking-widest flex items-center justify-center gap-2 cursor-not-allowed select-none"
                     >
                       <Lock className="w-3.5 h-3.5 text-[#F7F1E8]/40" />
                       <span>{item.buttonDisabledText}</span>
