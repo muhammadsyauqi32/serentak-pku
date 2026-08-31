@@ -3,6 +3,7 @@
 import { useState } from "react";
 import Navbar from "@/components/Navbar";
 import HeroSection from "@/components/HeroSection";
+import TalentSection from "@/components/TalentSection";
 import AboutSection from "@/components/AboutSection";
 import ThemeSection from "@/components/ThemeSection";
 import CompetitionSection from "@/components/CompetitionSection";
@@ -47,7 +48,10 @@ export default function Home() {
         {/* 3. Theme Section */}
         <ThemeSection />
 
-        {/* 4. Competition Categories */}
+        {/* 4. Open Registration Sayembara MC & Moderator */}
+        <TalentSection />
+
+        {/* 5. Competition Categories */}
         <CompetitionSection onOpenRegister={handleOpenRegister} />
 
         {/* 5. Event Timeline */}

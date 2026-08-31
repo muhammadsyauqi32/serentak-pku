@@ -21,6 +21,13 @@ const SECTION_DATA: Record<string, SectionPersonality> = {
     badge: "Selamat Datang!",
     message: "Halo! Selamat datang di SERENTAK 5.0 X RBB 2026 partisipasi aktif mahasiswa KM PKU IPB University Angkatan 63!",
   },
+  sayembara: {
+    id: "sayembara",
+    name: "Sayembara Talent",
+    pose: "/images/mascot_stand.png",
+    badge: "Open Registration",
+    message: "Tunjukkan kemampuan public speaking milikmu dengan mendaftar Sayembara MC & Moderator!",
+  },
   tentang: {
     id: "tentang",
     name: "Tentang",

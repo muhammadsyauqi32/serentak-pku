@@ -42,8 +42,8 @@ export default function ContactSection() {
                 <Phone className="w-5 h-5" />
               </div>
               <span className="text-xs font-bold uppercase tracking-wider text-[#C5A059] block mb-1">Contact Person</span>
-              <h3 className="font-subheading text-base font-bold text-[#F7F1E8] mb-1">+62 823-4977-2697</h3>
-              <p className="font-body text-xs text-[#F7F1E8]/70 mb-4">Alya</p>
+              <h3 className="font-subheading text-base font-bold text-[#F7F1E8] mb-1">+62 821-5058-4294</h3>
+              <p className="font-body text-xs text-[#F7F1E8]/70 mb-4">Erfan Zulfa</p>
             </div>
             <button
               onClick={() => handleCopy("+6282349772697", "wa")}
