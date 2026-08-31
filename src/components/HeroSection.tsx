@@ -1,8 +1,8 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import Image from "next/image";
 import { motion } from "framer-motion";
-import { ArrowRight, FileText, Sparkles, Clock, Landmark, Trophy, Users, ShieldCheck } from "lucide-react";
+import { ArrowRight, FileText, Sparkles } from "lucide-react";
 
 interface HeroSectionProps {
   onOpenRegister: () => void;
@@ -10,134 +10,141 @@ interface HeroSectionProps {
 }
 
 export default function HeroSection({ onOpenRegister, onOpenGuidebook }: HeroSectionProps) {
-  // Countdown Timer Logic to Target Date (e.g. 15 Oktober 2026)
-  const [timeLeft, setTimeLeft] = useState({
-    days: 45,
-    hours: 12,
-    minutes: 30,
-    seconds: 0,
-  });
-
-  useEffect(() => {
-    const targetDate = new Date("2026-10-15T23:59:59").getTime();
-
-    const interval = setInterval(() => {
-      const now = new Date().getTime();
-      const distance = targetDate - now;
-
-      if (distance > 0) {
-        const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-        const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-        const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-        const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-        setTimeLeft({ days, hours, minutes, seconds });
-      }
-    }, 1000);
-
-    return () => clearInterval(interval);
-  }, []);
-
   return (
-    <section id="home" className="relative min-h-screen pt-28 pb-20 md:pt-36 md:pb-28 flex items-center justify-center bg-gradient-to-b from-[#2A050A] via-[#38070F] to-[#4A0E17] text-[#FAF6F0] overflow-hidden">
-      {/* Background Indonesian Geometric Motif & Ambient Lights */}
-      <div className="absolute inset-0 bg-motif-dark opacity-40 pointer-events-none" />
-      <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-[#8B0000]/25 rounded-full blur-[140px] pointer-events-none" />
-      <div className="absolute -top-20 -right-20 w-96 h-96 bg-[#C5A059]/15 rounded-full blur-[100px] pointer-events-none" />
+    <section id="home" className="relative min-h-screen pt-28 pb-20 md:pt-36 md:pb-28 flex items-center justify-center bg-[#5A0B14] text-[#F7F1E8] overflow-hidden border-b border-[#C5A059]/30">
+      {/* Editorial Grid Background */}
+      <div className="absolute inset-0 bg-editorial-grid opacity-25 pointer-events-none" />
 
-      {/* Elegant Golden Border Frames & Cultural Motifs */}
-      <div className="absolute top-10 left-6 hidden lg:block opacity-30">
-        <svg width="120" height="120" viewBox="0 0 100 100" fill="none" stroke="#C5A059">
-          <path d="M0,0 L30,0 L0,30 Z" fill="#C5A059" opacity="0.3" />
+      {/* Decorative Golden Hairline Borders */}
+      <div className="absolute top-10 left-6 hidden lg:block opacity-40">
+        <svg width="100" height="100" viewBox="0 0 100 100" fill="none" stroke="#C5A059">
+          <path d="M0,0 L30,0 L0,30 Z" fill="#C5A059" opacity="0.4" />
           <path d="M0,0 L100,0 L0,100" strokeWidth="1" strokeDasharray="3 3" />
-          <circle cx="50" cy="50" r="40" strokeWidth="0.5" />
         </svg>
       </div>
 
-      <div className="absolute bottom-10 right-6 hidden lg:block opacity-30 rotate-180">
-        <svg width="120" height="120" viewBox="0 0 100 100" fill="none" stroke="#C5A059">
-          <path d="M0,0 L30,0 L0,30 Z" fill="#C5A059" opacity="0.3" />
+      <div className="absolute bottom-10 right-6 hidden lg:block opacity-40 rotate-180">
+        <svg width="100" height="100" viewBox="0 0 100 100" fill="none" stroke="#C5A059">
+          <path d="M0,0 L30,0 L0,30 Z" fill="#C5A059" opacity="0.4" />
           <path d="M0,0 L100,0 L0,100" strokeWidth="1" strokeDasharray="3 3" />
-          <circle cx="50" cy="50" r="40" strokeWidth="0.5" />
         </svg>
       </div>
 
-      <div className="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center z-10">
+      {/* Main Grid Container */}
+      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 z-10 w-full">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center">
+
+          {/* Left Column: Title, Subtitle, Description, CTA Buttons */}
+          <div className="lg:col-span-7 flex flex-col items-center lg:items-start text-center lg:text-left">
+
+            {/* Event Header Pill (Space Grotesk) */}
 
 
-        {/* Main Event Title */}
-        <motion.h1 initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 0.1 }} className="font-serif text-5xl sm:text-7xl md:text-8xl font-black tracking-tight leading-none mb-4">
-          <span className="gold-gradient-text drop-shadow-md">SERENTAK 5.0 </span>
-        </motion.h1>
+            {/* Main Event Title (Bungee Font) */}
+            <motion.h1
+              initial={{ opacity: 0, y: 25 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.1 }}
+              className="font-heading text-5xl sm:text-7xl lg:text-7xl xl:text-8xl text-[#C5A059] tracking-tight leading-none mb-4 uppercase drop-shadow-sm"
+            >
+              SERENTAK 5.0
+            </motion.h1>
 
-        {/* Subtitle */}
-        <motion.h2 initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 0.2 }} className="font-serif text-xl sm:text-2xl md:text-3xl font-bold text-[#FAF6F0] tracking-wide mb-6 text-balance">
-          "Ruang Ekspresi dan Kompetisi Mahasiswa"
-        </motion.h2>
+            {/* Subtitle (Space Grotesk) */}
+            <motion.h2
+              initial={{ opacity: 0, y: 15 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              className="font-subheading text-xl sm:text-2xl md:text-3xl font-bold text-[#F7F1E8] tracking-wide mb-6 text-balance uppercase"
+            >
+              "Politrik: Seni Berkuasa dengan Propaganda"
+            </motion.h2>
 
-        {/* Description */}
-        <motion.p
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, delay: 0.3 }}
-          className="max-w-3xl mx-auto text-sm sm:text-base md:text-lg text-[#FAF6F0]/85 font-normal leading-relaxed mb-10 text-balance"
-        >
-          SERENTAK merupakan wadah kompetisi bergengsi tingkat tinggi yang dirancang untuk menginspirasi, menguji intelegensi, seni sastra, serta keberanian mahasiswa dalam menyampaikan gagasan kritis dan karya terbaik bagi kemajuan bangsa.
-        </motion.p>
+            {/* Description (Inter Font) */}
+            <motion.p
+              initial={{ opacity: 0, y: 15 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.3 }}
+              className="font-body text-sm sm:text-base md:text-lg text-[#F7F1E8]/90 leading-relaxed mb-8 max-w-2xl text-balance"
+            >
+              Kegiatan perlombaan sekaligus event interaktif yang melibatkan partisipasi aktif mahasiswa KM PKU IPB University Angkatan 63 dalam merespons isu sosial-politik melalui wadah edukatif dan kritis.
+            </motion.p>
 
-        {/* CTA Buttons */}
-        <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 0.4 }} className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-14">
-          <button
-            onClick={onOpenRegister}
-            className="w-full sm:w-auto px-8 py-4 text-sm font-bold uppercase tracking-widest text-[#3D030D] bg-gradient-to-r from-[#E5C378] via-[#C5A059] to-[#9E7B35] rounded-xl shadow-2xl hover:brightness-110 active:scale-95 transition-all flex items-center justify-center gap-3 cursor-pointer border border-[#FFF3C4]/60"
-          >
-            <span>Daftar Sekarang</span>
-            <ArrowRight className="w-4 h-4" />
-          </button>
+            {/* CTA Buttons (Space Grotesk) */}
+            <motion.div
+              initial={{ opacity: 0, y: 15 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.4 }}
+              className="font-subheading flex flex-col sm:flex-row items-center gap-4 w-full sm:w-auto mb-4"
+            >
+              <button
+                onClick={onOpenRegister}
+                className="w-full sm:w-auto px-8 py-4 text-sm font-bold uppercase tracking-widest text-[#1A0B0B] bg-[#C5A059] hover:bg-[#E5C378] rounded-md shadow-lg transition-colors flex items-center justify-center gap-3 cursor-pointer border border-[#C5A059]"
+              >
+                <span>Daftar Sekarang</span>
+                <ArrowRight className="w-4 h-4" />
+              </button>
 
-          <button
-            onClick={onOpenGuidebook}
-            className="w-full sm:w-auto px-8 py-4 text-sm font-semibold text-[#FAF6F0] bg-[#58000E]/70 hover:bg-[#8B0000]/60 border border-[#C5A059]/50 rounded-xl backdrop-blur-md transition-all flex items-center justify-center gap-2.5 cursor-pointer"
-          >
-            <FileText className="w-4 h-4 text-[#E5C378]" />
-            <span>Lihat Guidebook Lomba</span>
-          </button>
-        </motion.div>
-
-        {/* Countdown Timer Widget */}
-        {/* <motion.div
-          initial={{ opacity: 0, scale: 0.95 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.7, delay: 0.5 }}
-          className="max-w-2xl mx-auto p-5 sm:p-6 rounded-2xl bg-[#2A050A]/70 border border-[#C5A059]/30 backdrop-blur-xl shadow-2xl mb-14"
-        >
-          <div className="flex items-center justify-center gap-2 text-xs uppercase tracking-widest text-[#C5A059] font-bold mb-4">
-            <Clock className="w-4 h-4 text-[#E5C378]" />
-            <span>Batas Pendaftaran Gelombang 1 Berakhir Dalam:</span>
+              <button
+                onClick={onOpenGuidebook}
+                className="w-full sm:w-auto px-8 py-4 text-sm font-semibold text-[#F7F1E8] bg-[#1A0B0B]/80 hover:bg-[#1A0B0B] border border-[#C5A059]/50 rounded-md transition-colors flex items-center justify-center gap-2.5 cursor-pointer"
+              >
+                <FileText className="w-4 h-4 text-[#C5A059]" />
+                <span>Lihat Guidebook Lomba</span>
+              </button>
+            </motion.div>
           </div>
 
-          <div className="grid grid-cols-4 gap-2 sm:gap-4">
-            <div className="bg-[#58000E]/80 border border-[#C5A059]/20 rounded-xl p-3 text-center">
-              <span className="block font-serif text-2xl sm:text-4xl font-extrabold text-[#E5C378]">{String(timeLeft.days).padStart(2, "0")}</span>
-              <span className="text-[10px] sm:text-xs text-[#FAF6F0]/70 uppercase tracking-wider">Hari</span>
-            </div>
+          {/* Right Column: Hero Mascot Showcase */}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.95, x: 20 }}
+            animate={{ opacity: 1, scale: 1, x: 0 }}
+            transition={{ duration: 0.7, delay: 0.2 }}
+            className="lg:col-span-5 flex flex-col items-center justify-center relative py-4"
+          >
+            {/* Solid Editorial Frame Backdrop */}
 
-            <div className="bg-[#58000E]/80 border border-[#C5A059]/20 rounded-xl p-3 text-center">
-              <span className="block font-serif text-2xl sm:text-4xl font-extrabold text-[#E5C378]">{String(timeLeft.hours).padStart(2, "0")}</span>
-              <span className="text-[10px] sm:text-xs text-[#FAF6F0]/70 uppercase tracking-wider">Jam</span>
-            </div>
 
-            <div className="bg-[#58000E]/80 border border-[#C5A059]/20 rounded-xl p-3 text-center">
-              <span className="block font-serif text-2xl sm:text-4xl font-extrabold text-[#E5C378]">{String(timeLeft.minutes).padStart(2, "0")}</span>
-              <span className="text-[10px] sm:text-xs text-[#FAF6F0]/70 uppercase tracking-wider">Menit</span>
-            </div>
+            {/* Floating Idle Mascot Illustration */}
+            <motion.div
+              animate={{
+                y: [0, -12, 0],
+                rotate: [-1, 1, -1],
+              }}
+              transition={{
+                duration: 3,
+                repeat: Infinity,
+                ease: "easeInOut",
+              }}
+              className="relative w-80 h-80 sm:w-[450px] sm:h-[450px] lg:w-[550px] lg:h-[550px] flex items-center justify-center py-6 group">
+              <Image
+                src="/images/mascot_stand.png"
+                alt="SERENTAK 5.0 Event Mascot"
+                fill
+                sizes="(max-width: 768px) 320px, 350px"
+                className="object-contain transition-transform duration-300 group-hover:scale-105"
+                priority
+              />
+            </motion.div>
 
-            <div className="bg-[#58000E]/80 border border-[#C5A059]/20 rounded-xl p-3 text-center">
-              <span className="block font-serif text-2xl sm:text-4xl font-extrabold text-[#E5C378]">{String(timeLeft.seconds).padStart(2, "0")}</span>
-              <span className="text-[10px] sm:text-xs text-[#FAF6F0]/70 uppercase tracking-wider">Detik</span>
-            </div>
-          </div>
-        </motion.div> */}
+            {/* Mascot Greeting Speech Pill */}
+            {/* <motion.div
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.5 }}
+              className="relative z-10 my-4 mx-4 px-5 py-3 rounded-xl bg-[#1A0B0B] border border-[#C5A059]/60 text-[#F7F1E8] text-center max-w-xs"
+            >
+              <div className="flex items-center justify-center gap-1.5 text-[11px] font-subheading font-bold text-[#C5A059] uppercase tracking-wider mb-1">
+                <Sparkles className="w-3.5 h-3.5" />
+                <span>Maskot Resmi SERENTAK</span>
+              </div>
+              <p className="font-body text-xs text-[#F7F1E8]/90 leading-relaxed font-normal">
+                "Halo! Siap membaca isu, menyuarakan gagasan, dan bergerak bersama?"
+              </p>
+            </motion.div> */}
+          </motion.div>
 
+        </div>
       </div>
     </section>
   );

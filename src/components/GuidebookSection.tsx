@@ -1,7 +1,6 @@
 "use client";
 
-import { motion } from "framer-motion";
-import { Download, FileText, CheckCircle2, ShieldAlert, Sparkles, BookOpenCheck } from "lucide-react";
+import { Download, BookOpenCheck, CheckCircle2 } from "lucide-react";
 
 interface GuidebookSectionProps {
   onOpenGuidebook: () => void;
@@ -9,57 +8,56 @@ interface GuidebookSectionProps {
 
 export default function GuidebookSection({ onOpenGuidebook }: GuidebookSectionProps) {
   return (
-    <section className="py-20 bg-gradient-to-r from-[#2A050A] via-[#58000E] to-[#3D030D] text-[#FAF6F0] relative overflow-hidden">
-      {/* Ambient background decoration */}
-      <div className="absolute inset-0 bg-motif-dark opacity-30 pointer-events-none" />
-      <div className="absolute -top-12 -right-12 w-80 h-80 bg-[#C5A059]/20 rounded-full blur-[100px] pointer-events-none" />
+    <section id="guidebook" className="py-20 bg-[#5A0B14] text-[#F7F1E8] relative overflow-hidden border-b border-[#C5A059]/30">
+      {/* Editorial Grid */}
+      <div className="absolute inset-0 bg-editorial-grid opacity-20 pointer-events-none" />
 
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="p-8 sm:p-12 rounded-3xl bg-[#2A050A]/80 border-2 border-[#C5A059]/50 backdrop-blur-xl shadow-2xl flex flex-col lg:flex-row items-center justify-between gap-8">
+        <div className="p-8 sm:p-12 rounded-2xl bg-[#1A0B0B] border border-[#C5A059]/40 shadow-xl flex flex-col lg:flex-row items-center justify-between gap-8">
           {/* Left Text Block */}
           <div className="space-y-4 text-center lg:text-left max-w-2xl">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#8B0000]/60 border border-[#C5A059]/40 text-[#E5C378] text-xs font-bold uppercase tracking-wider">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#5A0B14] border border-[#C5A059]/40 text-[#C5A059] text-xs font-subheading font-bold uppercase tracking-wider">
               <BookOpenCheck className="w-4 h-4" />
               <span>Dokumen Panduan Resmi</span>
             </div>
 
-            <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl font-black gold-gradient-text">
+            <h2 className="font-heading text-3xl sm:text-4xl md:text-5xl text-[#C5A059] uppercase tracking-tight">
               Panduan Perlombaan
             </h2>
 
-            <p className="text-sm sm:text-base text-[#FAF6F0]/85 leading-relaxed">
-              Pelajari seluruh ketentuan teknis, naskah puisi wajib, regulasi poster propaganda, rubrik penilaian juri, serta lampiran surat pernyataan melalui guidebook resmi SERENTAK 2026.
+            <p className="font-body text-sm sm:text-base text-[#F7F1E8]/90 leading-relaxed">
+              Pelajari seluruh ketentuan teknis perlombaan Debat dan Orasi, alur babak penyisihan hingga final, serta regulasi Ruang Baca Bicara (RBB) 2026 melalui guidebook resmi SERENTAK.
             </p>
 
             {/* Checklist inside banner */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2 text-xs text-[#FAF6F0]/90 font-medium">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2 text-xs font-body text-[#F7F1E8]/90 font-medium">
               <div className="flex items-center gap-2 justify-center lg:justify-start">
-                <CheckCircle2 className="w-4 h-4 text-[#E5C378] shrink-0" />
-                <span>Naskah 5 Puisi Wajib Pilihan Juri</span>
+                <CheckCircle2 className="w-4 h-4 text-[#C5A059] shrink-0" />
+                <span>Regulasi Teknis Kompetisi Debat</span>
               </div>
 
               <div className="flex items-center gap-2 justify-center lg:justify-start">
-                <CheckCircle2 className="w-4 h-4 text-[#E5C378] shrink-0" />
-                <span>Template Surat Pernyataan Materai</span>
+                <CheckCircle2 className="w-4 h-4 text-[#C5A059] shrink-0" />
+                <span>Ketentuan Penampilan Orasi</span>
               </div>
 
               <div className="flex items-center gap-2 justify-center lg:justify-start">
-                <CheckCircle2 className="w-4 h-4 text-[#E5C378] shrink-0" />
-                <span>Rincian Rubrik Penilaian Dewan Juri</span>
+                <CheckCircle2 className="w-4 h-4 text-[#C5A059] shrink-0" />
+                <span>Rubrik Penilaian & Bobot Argumen</span>
               </div>
 
               <div className="flex items-center gap-2 justify-center lg:justify-start">
-                <CheckCircle2 className="w-4 h-4 text-[#E5C378] shrink-0" />
-                <span>Panduan Teknis Pengumpulan Drive</span>
+                <CheckCircle2 className="w-4 h-4 text-[#C5A059] shrink-0" />
+                <span>Jadwal Lengkap Rangkaian RBB 2026</span>
               </div>
             </div>
           </div>
 
           {/* Right Action Button */}
-          <div className="shrink-0 w-full lg:w-auto">
+          <div className="shrink-0 w-full lg:w-auto font-subheading">
             <button
               onClick={onOpenGuidebook}
-              className="w-full lg:w-auto px-8 py-4 rounded-2xl bg-gradient-to-r from-[#E5C378] via-[#C5A059] to-[#9E7B35] text-[#3D030D] hover:brightness-110 font-bold uppercase tracking-widest text-sm shadow-2xl transition-all duration-300 flex items-center justify-center gap-3 border border-[#FFF3C4]/60 cursor-pointer active:scale-95"
+              className="w-full lg:w-auto px-8 py-4 rounded-md bg-[#C5A059] hover:bg-[#E5C378] text-[#1A0B0B] font-bold uppercase tracking-widest text-xs shadow-lg transition-colors flex items-center justify-center gap-3 border border-[#C5A059] cursor-pointer"
             >
               <Download className="w-5 h-5" />
               <span>Download Guidebook (PDF)</span>

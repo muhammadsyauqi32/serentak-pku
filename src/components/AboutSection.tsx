@@ -1,124 +1,176 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Sparkles, Award, Target, Flame, Lightbulb, Compass, CheckCircle2 } from "lucide-react";
+import { Compass, BookOpen, Volume2, Target, Sparkles, CheckCircle2 } from "lucide-react";
 
 export default function AboutSection() {
-  const pillars = [
+  const objectives = [
     {
-      icon: Lightbulb,
-      title: "Kreativitas & Orisinalitas",
-      description: "Menghidupkan imajinasi serta kebebasan berekspresi secara intelektual dan estetik di kalangan mahasiswa.",
+      id: "01",
+      text: "Menyediakan wadah pengembangan diri dan berekspresi bagi mahasiswa.",
     },
     {
-      icon: Target,
-      title: "Integritas & Kritis",
-      description: "Mendorong keberanian gagasan propaganda positif yang konstruktif dan solutif terhadap isu sosial bangsa.",
+      id: "02",
+      text: "Meningkatkan kesadaran dan pemahaman mahasiswa terhadap isu-isu strategis dan kemahasiswaan.",
     },
     {
-      icon: Award,
-      title: "Prestasi Nasional",
-      description: "Menyediakan panggung kehormatan berskala nasional untuk mengukir jejak jejak prestasi mahakarya perguruan tinggi.",
+      id: "03",
+      text: "Mendorong budaya literasi serta berpikir kritis di lingkungan KM PKU IPB University Angkatan 63.",
     },
   ];
 
   return (
-    <section id="tentang" className="py-24 bg-[#FAF6F0] relative overflow-hidden text-[#181512]">
-      {/* Subtle Background Pattern */}
-      <div className="absolute inset-0 bg-batik-pattern opacity-40 pointer-events-none" />
+    <section id="tentang" className="py-24 bg-[#F7F1E8] relative text-[#1F1F1F] border-b border-[#C5A059]/20">
+      {/* Paper texture overlay */}
+      <div className="absolute inset-0 bg-paper-texture opacity-40 pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#8B0000]/10 border border-[#8B0000]/20 mb-4">
-            <Compass className="w-4 h-4 text-[#8B0000]" />
-            <span className="text-xs font-bold uppercase tracking-widest text-[#8B0000]">
-              Tentang SERENTAK
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#5A0B14]/10 border border-[#5A0B14]/20 mb-4 font-subheading">
+            <Compass className="w-4 h-4 text-[#5A0B14]" />
+            <span className="text-xs font-bold uppercase tracking-widest text-[#5A0B14]">
+              Tentang SERENTAK 5.0 X RBB 2026
             </span>
           </div>
 
-          <h2 className="font-serif text-3xl sm:text-5xl font-extrabold text-[#3D030D] mb-6">
-            Mewadahi Talenta & Menyuarakan Aspirasi Mahasiswa
+          <h2 className="font-heading text-3xl sm:text-4xl md:text-5xl text-[#5A0B14] mb-4 uppercase tracking-tight">
+            Semarak Untuk Bergerak X Ruang Baca Bicara
           </h2>
-          <div className="w-24 h-1 bg-gradient-to-r from-[#8B0000] via-[#C5A059] to-[#8B0000] mx-auto rounded-full mb-6" />
+          <div className="w-20 h-1 bg-[#C5A059] mx-auto rounded-full mb-6" />
         </div>
 
-        {/* Two-Column Grid: Left Text Block, Right Visual Card */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center mb-16">
-          {/* Left Description Column */}
-          <motion.div
-            initial={{ opacity: 0, x: -30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="lg:col-span-7 space-y-6"
-          >
-            <h3 className="font-serif text-2xl sm:text-3xl font-bold text-[#4A0E17] leading-snug">
-              Ruang Kolaboratif Bagi Pembawa Perubahan dan Pegiat Seni Mahasiswa
-            </h3>
+        {/* 1. Main About Description Paragraphs (Inter Body Font) */}
+        <motion.div
+          initial={{ opacity: 0, y: 15 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
+          className="p-8 sm:p-10 rounded-2xl bg-[#FFFDF9] border border-[#C5A059]/30 shadow-sm mb-16 space-y-4 font-body text-sm sm:text-base text-[#1F1F1F] leading-relaxed"
+        >
+          <p>
+            <strong className="text-[#5A0B14] font-semibold">SERENTAK 5.0 X RBB 2026</strong> merupakan kegiatan perlombaan sekaligus event interaktif yang melibatkan partisipasi aktif mahasiswa KM PKU IPB University Angkatan 63.
+          </p>
 
-            <p className="text-sm sm:text-base text-[#181512]/80 leading-relaxed">
-              <strong className="text-[#8B0000]">SERENTAK 2026</strong> adalah acara kompetisi mahasiswa internal dan antar-perguruan tinggi yang dirancang secara profesional oleh organisasi mahasiswa untuk menyatukan beragam potensi pemuda dari seluruh pelosok negeri.
+          <p>
+            Kegiatan ini bertujuan untuk meningkatkan pengetahuan serta kepekaan mahasiswa terhadap isu-isu sosial-politik di sekitar mereka.
+          </p>
+
+          <p>
+            SERENTAK 5.0 dikolaborasikan dengan Ruang Baca Bicara (RBB) 2026 yang menghadirkan konsep kegiatan luar ruangan yang lebih santai, edukatif, dan interaktif.
+          </p>
+
+          <p>
+            Selain sebagai ajang kompetisi, kegiatan ini menjadi sarana pengembangan pola pikir kritis, kemampuan berargumentasi, serta keberanian dalam menyampaikan gagasan.
+          </p>
+        </motion.div>
+
+        {/* 2. Event Name Explanation Section (Dark Editorial Box) */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
+          className="p-8 sm:p-12 rounded-2xl bg-[#1A0B0B] text-[#F7F1E8] border border-[#C5A059]/40 shadow-md mb-16 relative overflow-hidden"
+        >
+          <div className="flex items-center gap-2 text-xs font-subheading font-bold uppercase tracking-widest text-[#C5A059] mb-3">
+            <Sparkles className="w-4 h-4 text-[#C5A059]" />
+            <span>Makna Nama SERENTAK 5.0 X RBB 2026</span>
+          </div>
+
+          <h3 className="font-heading text-2xl sm:text-3xl text-[#C5A059] mb-6 uppercase">
+            Filosofi & Nilai Kolektivitas
+          </h3>
+
+          <div className="space-y-5 font-body text-xs sm:text-sm md:text-base text-[#F7F1E8]/90 leading-relaxed">
+            <p>
+              Nama <strong className="text-[#C5A059]">SERENTAK</strong> dipilih karena mencerminkan semangat kolektivitas, bahwa KM PKU Angkatan 63 bergerak bersama dalam satu langkah yang selaras untuk merespons isu sosial-politik di sekitar mereka.
             </p>
 
-            <p className="text-sm sm:text-base text-[#181512]/80 leading-relaxed">
-              Nama <em>"SERENTAK"</em> melambangkan langkah bersama, ritme harmoni, dan kebangkitan intelektual pemuda Indonesia. Melalui lomba Seni Baca Puisi dan Lomba Poster/Naskah Propaganda, kami percaya bahwa kata dan visual adalah senjata ampuh dalam menggerakkan kesadaran publik serta menyalakan semangat kemajuan bangsa.
+            <p>
+              Kata <strong className="text-[#C5A059]">"Semarak"</strong> menggambarkan upaya menghadirkan isu-isu yang kerap dianggap berat menjadi sesuatu yang menarik dan membumi, sementara frasa <strong className="text-[#C5A059]">"Untuk Bergerak"</strong> menegaskan bahwa kegiatan ini berorientasi bukan hanya pada kesadaran, tetapi pada aksi nyata.
             </p>
 
-            <div className="space-y-3 pt-2">
-              <div className="flex items-start gap-3">
-                <CheckCircle2 className="w-5 h-5 text-[#8B0000] shrink-0 mt-0.5" />
-                <p className="text-xs sm:text-sm text-[#3D2418] font-medium">
-                  <strong>Penilaian Profesional:</strong> Didewanjuri oleh pakar sastra, akademisi, dan praktisi industri kreatif terkemuka.
-                </p>
-              </div>
+            <p>
+              Angka <strong className="text-[#C5A059]">5.0</strong> menandai edisi kelima dari kegiatan ini sebagai simbol keberlanjutan dan komitmen dalam menghadirkan ruang edukasi sosial-politik bagi mahasiswa.
+            </p>
 
-              <div className="flex items-start gap-3">
-                <CheckCircle2 className="w-5 h-5 text-[#8B0000] shrink-0 mt-0.5" />
-                <p className="text-xs sm:text-sm text-[#3D2418] font-medium">
-                  <strong>Akreditasi & Sertifikasi:</strong> Sertifikat resmi yang diakui sebagai penunjang Satuan Kredit Kegiatan Mahasiswa (SKKM).
-                </p>
-              </div>
+            {/* RBB Breakdown */}
+            <div className="p-6 rounded-xl bg-[#5A0B14]/80 border border-[#C5A059]/30 my-6 space-y-4">
+              <p className="font-subheading font-bold text-[#C5A059] text-sm sm:text-base">
+                RBB (Ruang Baca Bicara) hadir sebagai ruang yang menawarkan dua tahapan penting dalam proses kesadaran kritis:
+              </p>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div className="p-4 rounded-lg bg-[#1A0B0B] border border-[#C5A059]/20 flex items-start gap-3">
+                  <div className="p-2 rounded bg-[#C5A059]/20 text-[#C5A059] shrink-0">
+                    <BookOpen className="w-5 h-5" />
+                  </div>
+                  <div>
+                    <h4 className="font-subheading font-bold text-[#C5A059] text-xs sm:text-sm uppercase tracking-wider mb-1">Baca</h4>
+                    <p className="font-body text-xs text-[#F7F1E8]/80">menyerap dan menelaah realitas sosial-politik yang ada.</p>
+                  </div>
+                </div>
 
-              <div className="flex items-start gap-3">
-                <CheckCircle2 className="w-5 h-5 text-[#8B0000] shrink-0 mt-0.5" />
-                <p className="text-xs sm:text-sm text-[#3D2418] font-medium">
-                  <strong>Akses Transparan:</strong> Proses pendaftaran terintegrasi cepat via Google Form dan pemantauan transparan.
-                </p>
+                <div className="p-4 rounded-lg bg-[#1A0B0B] border border-[#C5A059]/20 flex items-start gap-3">
+                  <div className="p-2 rounded bg-[#C5A059]/20 text-[#C5A059] shrink-0">
+                    <Volume2 className="w-5 h-5" />
+                  </div>
+                  <div>
+                    <h4 className="font-subheading font-bold text-[#C5A059] text-xs sm:text-sm uppercase tracking-wider mb-1">Bicara</h4>
+                    <p className="font-body text-xs text-[#F7F1E8]/80">keberanian untuk menyuarakan gagasan secara kritis dan bermakna.</p>
+                  </div>
+                </div>
               </div>
             </div>
-          </motion.div>
 
-          {/* Right Visual Frame Card */}
+            <p className="pt-2 italic text-[#F7F1E8]/95 font-medium border-t border-[#C5A059]/30">
+              Kolaborasi SERENTAK 5.0 X RBB 2026 merupakan perpaduan antara semangat kolektif dan kedalaman intelektual dalam membentuk mahasiswa yang tidak hanya peka, tetapi juga berani mengambil peran terhadap isu-isu di sekitar mereka.
+            </p>
+          </div>
+        </motion.div>
 
-        </div>
+        {/* 3. Objectives Section (Tujuan Kegiatan) */}
+        <div>
+          <div className="text-center max-w-2xl mx-auto mb-10">
+            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#5A0B14]/10 border border-[#5A0B14]/20 mb-3 font-subheading">
+              <Target className="w-4 h-4 text-[#5A0B14]" />
+              <span className="text-xs font-bold uppercase tracking-widest text-[#5A0B14]">
+                Tujuan Utama
+              </span>
+            </div>
+            <h3 className="font-heading text-2xl sm:text-3xl text-[#5A0B14] uppercase">
+              Tujuan Kegiatan
+            </h3>
+          </div>
 
-        {/* 3 Pillars Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {pillars.map((pillar, idx) => {
-            const Icon = pillar.icon;
-            return (
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {objectives.map((item, idx) => (
               <motion.div
-                key={pillar.title}
-                initial={{ opacity: 0, y: 20 }}
+                key={item.id}
+                initial={{ opacity: 0, y: 15 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: idx * 0.15 }}
-                className="p-8 rounded-2xl bg-[#FFFDF9] border border-[#EBE0D0] hover:border-[#C5A059] shadow-md hover:shadow-xl transition-all duration-300 group"
+                transition={{ duration: 0.4, delay: idx * 0.1 }}
+                className="p-6 sm:p-8 rounded-2xl bg-[#FFFDF9] border border-[#C5A059]/30 hover:border-[#C5A059] shadow-sm transition-all duration-200 flex flex-col justify-between"
               >
-                <div className="w-14 h-14 rounded-xl bg-[#58000E] border border-[#C5A059] flex items-center justify-center text-[#E5C378] mb-6 group-hover:scale-110 transition-transform">
-                  <Icon className="w-7 h-7" />
+                <div>
+                  <div className="w-12 h-12 rounded-lg bg-[#5A0B14] border border-[#C5A059] flex items-center justify-center text-[#C5A059] font-heading text-xl mb-6">
+                    {item.id}
+                  </div>
+                  <p className="font-body text-sm sm:text-base text-[#1F1F1F] font-medium leading-relaxed">
+                    {item.text}
+                  </p>
                 </div>
-                <h4 className="font-serif text-xl font-bold text-[#3D030D] mb-3 group-hover:text-[#8B0000] transition-colors">
-                  {pillar.title}
-                </h4>
-                <p className="text-xs sm:text-sm text-[#5C3D2E] leading-relaxed">
-                  {pillar.description}
-                </p>
+                <div className="mt-6 pt-4 border-t border-[#C5A059]/20 flex items-center gap-2 text-xs font-subheading font-bold text-[#5A0B14]">
+                  <CheckCircle2 className="w-4 h-4 text-[#5A0B14]" />
+                  <span>Komitmen KM PKU 63</span>
+                </div>
               </motion.div>
-            );
-          })}
+            ))}
+          </div>
         </div>
+
       </div>
     </section>
   );

@@ -1,41 +1,46 @@
 import type { Metadata } from "next";
-import { Cinzel, Plus_Jakarta_Sans } from "next/font/google";
+import { Bungee, Space_Grotesk, Inter } from "next/font/google";
 import "./globals.css";
 
-const cinzel = Cinzel({
-  variable: "--font-cinzel",
+const bungee = Bungee({
+  weight: "400",
   subsets: ["latin"],
+  variable: "--font-bungee",
   display: "swap",
-  weight: ["400", "500", "600", "700", "800", "900"],
 });
 
-const jakarta = Plus_Jakarta_Sans({
-  variable: "--font-jakarta",
+const spaceGrotesk = Space_Grotesk({
   subsets: ["latin"],
+  variable: "--font-space-grotesk",
   display: "swap",
-  weight: ["300", "400", "500", "600", "700", "800"],
+});
+
+const inter = Inter({
+  subsets: ["latin"],
+  variable: "--font-inter",
+  display: "swap",
 });
 
 export const metadata: Metadata = {
-  title: "SERENTAK 2026 | Ruang Ekspresi dan Kompetisi Mahasiswa Nasional",
+  title: "SERENTAK 5.0 X RBB 2026 | KM PKU IPB University",
   description:
-    "SERENTAK adalah ajang kompetisi mahasisawa antar Perguruan Tinggi nasional yang mewadahi bakat, ekspresi seni, karya propaganda, serta kreativitas generasi muda Indonesia.",
+    "SERENTAK 5.0 X RBB 2026 merupakan kegiatan perlombaan sekaligus event interaktif mahasiswa KM PKU IPB University Angkatan 63 dengan tema Politrik: Seni Berkuasa dengan Propaganda.",
   keywords: [
-    "SERENTAK",
-    "Kompetisi Mahasiswa",
-    "Lomba Baca Puisi",
-    "Lomba Propaganda",
-    "Student Competition",
-    "Lomba Mahasiswa 2026",
-    "Kompetisi Nasional",
+    "SERENTAK 5.0",
+    "RBB 2026",
+    "Ruang Baca Bicara",
+    "KM PKU Angkatan 63",
+    "IPB University",
+    "Kompetisi Debat",
+    "Kompetisi Orasi",
+    "Politrik",
   ],
-  authors: [{ name: "Panitia Pelaksana SERENTAK 2026" }],
+  authors: [{ name: "KM PKU IPB University Angkatan 63" }],
   openGraph: {
-    title: "SERENTAK 2026 | Ruang Ekspresi dan Kompetisi Mahasiswa",
+    title: "SERENTAK 5.0 X RBB 2026 | KM PKU IPB University",
     description:
-      "Tunjukkan ide, bakat, dan keberanianmu di ajang bergengsi kompetisi mahasiswa nasional SERENTAK 2026.",
-    url: "https://serentak.or.id",
-    siteName: "SERENTAK 2026",
+      "Kegiatan perlombaan sekaligus event interaktif mahasiswa KM PKU IPB University Angkatan 63.",
+    siteName: "SERENTAK 5.0 X RBB 2026",
     locale: "id_ID",
     type: "website",
   },
@@ -49,9 +54,9 @@ export default function RootLayout({
   return (
     <html
       lang="id"
-      className={`${cinzel.variable} ${jakarta.variable} scroll-smooth antialiased`}
+      className={`${bungee.variable} ${spaceGrotesk.variable} ${inter.variable} scroll-smooth antialiased`}
     >
-      <body className="bg-[#FAF6F0] text-[#181512] min-h-screen flex flex-col font-sans selection:bg-[#8B0000] selection:text-[#FAF6F0]">
+      <body className="bg-[#F7F1E8] text-[#1F1F1F] min-h-screen flex flex-col font-sans selection:bg-[#5A0B14] selection:text-[#F7F1E8]">
         {children}
       </body>
     </html>

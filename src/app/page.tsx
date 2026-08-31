@@ -5,6 +5,7 @@ import Navbar from "@/components/Navbar";
 import HeroSection from "@/components/HeroSection";
 import AboutSection from "@/components/AboutSection";
 import ThemeSection from "@/components/ThemeSection";
+import EventSeriesSection from "@/components/EventSeriesSection";
 import CompetitionSection from "@/components/CompetitionSection";
 import TimelineSection from "@/components/TimelineSection";
 import RequirementsSection from "@/components/RequirementsSection";
@@ -15,6 +16,7 @@ import ContactSection from "@/components/ContactSection";
 import Footer from "@/components/Footer";
 import RegistrationModal from "@/components/RegistrationModal";
 import GuidebookModal from "@/components/GuidebookModal";
+import InteractiveMascot from "@/components/InteractiveMascot";
 
 export default function Home() {
   const [isRegisterOpen, setIsRegisterOpen] = useState(false);
@@ -27,7 +29,7 @@ export default function Home() {
   };
 
   return (
-    <div className="min-h-screen bg-[#FAF6F0] text-[#181512] flex flex-col font-sans">
+    <div className="min-h-screen bg-[#FAF6F0] text-[#181512] flex flex-col font-sans relative">
       {/* Sticky Navigation Bar */}
       <Navbar
         onOpenRegister={() => handleOpenRegister()}
@@ -48,30 +50,36 @@ export default function Home() {
         {/* 3. Theme Section */}
         <ThemeSection />
 
-        {/* 4. Competition Categories */}
+        {/* 4. Event Series Section */}
+        <EventSeriesSection />
+
+        {/* 5. Competition Categories */}
         <CompetitionSection onOpenRegister={handleOpenRegister} />
 
-        {/* 5. Event Timeline */}
+        {/* 6. Event Timeline */}
         <TimelineSection />
 
-        {/* 6. Requirements */}
+        {/* 7. Requirements */}
         <RequirementsSection />
 
-        {/* 7. Guidebook CTA */}
+        {/* 8. Guidebook CTA */}
         <GuidebookSection onOpenGuidebook={() => setIsGuidebookOpen(true)} />
 
-        {/* 8. FAQ Accordion */}
+        {/* 9. FAQ Accordion */}
         <FAQSection />
 
-        {/* 9. Sponsor & Partner Section */}
+        {/* 10. Sponsor & Partner Section */}
         <SponsorSection />
 
-        {/* 10. Contact & Helpdesk */}
+        {/* 11. Contact & Helpdesk */}
         <ContactSection />
       </main>
 
       {/* Footer */}
       <Footer />
+
+      {/* Floating Interactive Event Mascot */}
+      <InteractiveMascot />
 
       {/* Interactive Modals */}
       <RegistrationModal
