@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Compass, BookOpen, Volume2, Target, Sparkles, CheckCircle2 } from "lucide-react";
+import { Compass, BookOpen, Volume2, Target, CheckCircle2 } from "lucide-react";
 
 export default function AboutSection() {
   const objectives = [
@@ -25,7 +25,7 @@ export default function AboutSection() {
       <div className="absolute inset-0 bg-paper-texture opacity-40 pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        
+
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">
           <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#5A0B14]/10 border border-[#5A0B14]/20 mb-4 font-subheading">
@@ -75,7 +75,6 @@ export default function AboutSection() {
           className="p-8 sm:p-12 rounded-2xl bg-[#1A0B0B] text-[#F7F1E8] border border-[#C5A059]/40 shadow-md mb-16 relative overflow-hidden"
         >
           <div className="flex items-center gap-2 text-xs font-subheading font-bold uppercase tracking-widest text-[#C5A059] mb-3">
-            <Sparkles className="w-4 h-4 text-[#C5A059]" />
             <span>Makna Nama SERENTAK 5.0 X RBB 2026</span>
           </div>
 

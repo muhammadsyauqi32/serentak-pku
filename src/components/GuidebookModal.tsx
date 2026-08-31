@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { X, Download, FileText, CheckCircle2, Bookmark, ExternalLink, Sparkles, BookOpen } from "lucide-react";
+import { X, Download, FileText, CheckCircle2, Bookmark, ExternalLink, BookOpen } from "lucide-react";
 
 interface GuidebookModalProps {
   isOpen: boolean;

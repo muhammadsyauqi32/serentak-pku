@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { ArrowRight, FileText, Sparkles } from "lucide-react";
+import { ArrowRight, FileText } from "lucide-react";
 
 interface HeroSectionProps {
   onOpenRegister: () => void;

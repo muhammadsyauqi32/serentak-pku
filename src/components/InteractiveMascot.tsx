@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react";
 import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
-import { Sparkles, X, Volume2, ChevronUp } from "lucide-react";
+import { X, Volume2, ChevronUp } from "lucide-react";
 
 interface SectionPersonality {
   id: string;
@@ -154,7 +154,6 @@ export default function InteractiveMascot() {
 
             {/* Header Badge */}
             <div className="flex items-center gap-1.5 mb-2 pr-5 font-subheading">
-              <Sparkles className="w-3.5 h-3.5 text-[#C5A059] shrink-0" />
               <span className="text-[11px] font-bold uppercase tracking-wider text-[#C5A059]">
                 {currentPersonality.badge}
               </span>

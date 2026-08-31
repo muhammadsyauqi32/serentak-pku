@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Layers, Sparkles, Trophy, BookOpen, Mic } from "lucide-react";
+import { Layers, Trophy, BookOpen, Mic } from "lucide-react";
 
 export default function EventSeriesSection() {
   const series = [
@@ -77,7 +77,6 @@ export default function EventSeriesSection() {
                 </div>
 
                 <div className="mt-8 pt-4 border-t border-[#C5A059]/20 flex items-center gap-2 text-xs font-subheading font-bold text-[#5A0B14]">
-                  <Sparkles className="w-3.5 h-3.5" />
                   <span>Tahap {item.step} SERENTAK 2026</span>
                 </div>
               </motion.div>
