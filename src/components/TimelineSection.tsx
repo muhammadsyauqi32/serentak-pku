@@ -43,17 +43,10 @@ export default function TimelineSection() {
       <div className="absolute inset-0 bg-dark-paper opacity-40 pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        {/* Section Header */}
+        {/* Section Header (Requirement 4: <h2>Timeline</h2>) */}
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#5A0B14] border border-[#C5A059]/40 mb-4 font-subheading">
-            <Calendar className="w-4 h-4 text-[#C5A059]" />
-            <span className="text-xs font-bold uppercase tracking-widest text-[#C5A059]">
-              Jadwal Timeline Acara
-            </span>
-          </div>
-
           <h2 className="font-heading text-3xl sm:text-4xl md:text-5xl text-[#C5A059] mb-4 uppercase">
-            Timeline SERENTAK 5.0 X RBB 2026
+            Timeline
           </h2>
           <div className="w-20 h-1 bg-[#C5A059] mx-auto rounded-full mt-4" />
         </div>

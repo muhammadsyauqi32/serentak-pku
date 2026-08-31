@@ -31,12 +31,12 @@ export default function AboutSection() {
           <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#5A0B14]/10 border border-[#5A0B14]/20 mb-4 font-subheading">
             <Compass className="w-4 h-4 text-[#5A0B14]" />
             <span className="text-xs font-bold uppercase tracking-widest text-[#5A0B14]">
-              Tentang SERENTAK 5.0 X RBB 2026
+              Informasi Program
             </span>
           </div>
 
           <h2 className="font-heading text-3xl sm:text-4xl md:text-5xl text-[#5A0B14] mb-4 uppercase tracking-tight">
-            Semarak Untuk Bergerak X Ruang Baca Bicara
+            About SERENTAK
           </h2>
           <div className="w-20 h-1 bg-[#C5A059] mx-auto rounded-full mb-6" />
         </div>
@@ -50,11 +50,11 @@ export default function AboutSection() {
           className="p-8 sm:p-10 rounded-2xl bg-[#FFFDF9] border border-[#C5A059]/30 shadow-sm mb-16 space-y-4 font-body text-sm sm:text-base text-[#1F1F1F] leading-relaxed"
         >
           <p>
-            <strong className="text-[#5A0B14] font-semibold">SERENTAK 5.0 X RBB 2026</strong> merupakan kegiatan perlombaan sekaligus event interaktif yang melibatkan partisipasi aktif mahasiswa KM PKU IPB University Angkatan 63.
+            <strong className="text-[#5A0B14] font-semibold">SERENTAK 5.0 X RBB 2026</strong> merupakan program kerja resmi dari <strong className="text-[#5A0B14]">Departemen Kajian Aksi dan Strategis Ormawa Eksekutif PKU</strong> yang hadir sebagai ruang literasi mahasiswa, tempat ekspresi, dan sarana pengembangan diri.
           </p>
 
           <p>
-            Kegiatan ini bertujuan untuk meningkatkan pengetahuan serta kepekaan mahasiswa terhadap isu-isu sosial-politik di sekitar mereka.
+            Melalui kolaborasi dengan Ruang Baca Bicara (RBB), ajang <strong className="text-[#5A0B14]">kompetisi mahasiswa IPB</strong> dan <strong className="text-[#5A0B14]">lomba mahasiswa</strong> ini menjadi wadah strategis bagi mahasiswa KM PKU IPB University untuk mendalami isu sosial-politik mahasiswa, membangun gagasan kritis, serta menyuarakan aspirasi publik secara bertanggung jawab.
           </p>
 
           <p>

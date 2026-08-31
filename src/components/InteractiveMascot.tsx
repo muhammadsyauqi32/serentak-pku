@@ -16,7 +16,7 @@ interface SectionPersonality {
 const SECTION_DATA: Record<string, SectionPersonality> = {
   home: {
     id: "home",
-    name: "Utama",
+    name: "Beranda",
     pose: "/images/mascot_sleep.png",
     badge: "Selamat Datang!",
     message: "Halo! Selamat datang di SERENTAK 5.0 X RBB 2026 partisipasi aktif mahasiswa KM PKU IPB University Angkatan 63!",
@@ -34,13 +34,6 @@ const SECTION_DATA: Record<string, SectionPersonality> = {
     pose: "/images/mascot_stand.png",
     badge: "Tema Utama",
     message: "Politrik: Seni Berkuasa dengan Propaganda — gagasan utama SERENTAK 5.0 X RBB 2026!",
-  },
-  rangkaian: {
-    id: "rangkaian",
-    name: "Rangkaian",
-    pose: "/images/mascot_sleep.png",
-    badge: "Tahapan Acara",
-    message: "Dari Opening, Debat, Orasi, hingga Closing & RBB dengan Pameran Buku dan Talkshow!",
   },
   lomba: {
     id: "lomba",
@@ -92,6 +85,7 @@ export default function InteractiveMascot() {
   const [isHovered, setIsHovered] = useState<boolean>(false);
   const [isMinimized, setIsMinimized] = useState<boolean>(false);
 
+  // Auto disappear speech bubble after 7s
   useEffect(() => {
     let timer: NodeJS.Timeout;
     if (showSpeechBubble) {
@@ -102,33 +96,28 @@ export default function InteractiveMascot() {
     return () => clearTimeout(timer);
   }, [showSpeechBubble, activeSection]);
 
+  // Rock-solid Active Section Scroll Tracking
   useEffect(() => {
-    const sectionIds = Object.keys(SECTION_DATA);
-    const observerOptions = {
-      root: null,
-      rootMargin: "-20% 0px -40% 0px",
-      threshold: 0.2,
-    };
+    const handleScroll = () => {
+      const sectionIds = Object.keys(SECTION_DATA);
+      const scrollPosition = window.scrollY + window.innerHeight * 0.35;
 
-    const handleIntersect: IntersectionObserverCallback = (entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          const id = entry.target.id;
-          if (SECTION_DATA[id]) {
+      for (let i = sectionIds.length - 1; i >= 0; i--) {
+        const id = sectionIds[i];
+        const el = document.getElementById(id);
+        if (el) {
+          const top = el.offsetTop;
+          if (scrollPosition >= top - 100) {
             setActiveSection(id);
+            break;
           }
         }
-      });
+      }
     };
 
-    const observer = new IntersectionObserver(handleIntersect, observerOptions);
-
-    sectionIds.forEach((id) => {
-      const el = document.getElementById(id);
-      if (el) observer.observe(el);
-    });
-
-    return () => observer.disconnect();
+    handleScroll();
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   const currentPersonality = SECTION_DATA[activeSection] || SECTION_DATA.home;
@@ -163,14 +152,15 @@ export default function InteractiveMascot() {
               <X className="w-3.5 h-3.5" />
             </button>
 
-            {/* Header Badge (Space Grotesk) */}
+            {/* Header Badge */}
             <div className="flex items-center gap-1.5 mb-2 pr-5 font-subheading">
+              <Sparkles className="w-3.5 h-3.5 text-[#C5A059] shrink-0" />
               <span className="text-[11px] font-bold uppercase tracking-wider text-[#C5A059]">
                 {currentPersonality.badge}
               </span>
             </div>
 
-            {/* Message Body (Inter) */}
+            {/* Message Body */}
             <p className="font-body text-xs sm:text-sm leading-relaxed text-[#F7F1E8] font-normal">
               "{currentPersonality.message}"
             </p>
@@ -211,7 +201,7 @@ export default function InteractiveMascot() {
           <div className="relative w-12 h-12 rounded-full bg-[#1A0B0B] border-2 border-[#C5A059] flex items-center justify-center shadow-xl">
             <Image
               src={currentPersonality.pose}
-              alt="Mascot Avatar"
+              alt="Maskot SERENTAK 5.0 X RBB 2026 Avatar"
               width={36}
               height={36}
               className="object-contain"
@@ -239,11 +229,10 @@ export default function InteractiveMascot() {
               >
                 <Image
                   src={currentPersonality.pose}
-                  alt="SERENTAK 5.0 Mascot"
+                  alt="Maskot SERENTAK 5.0 X RBB 2026"
                   fill
                   sizes="(max-width: 640px) 80px, 96px"
                   className="object-contain drop-shadow-md"
-                  priority
                 />
               </motion.div>
             </div>
@@ -263,7 +252,7 @@ export default function InteractiveMascot() {
 
             {/* Section Indicator Pill */}
             <div className="mt-1 px-2.5 py-0.5 rounded-md bg-[#1A0B0B] border border-[#C5A059]/50 text-[10px] font-subheading font-bold text-[#C5A059] tracking-wider uppercase shadow-md flex items-center gap-1">
-              <span className="w-1.5 h-1.5 rounded-full bg-[#C5A059]" />
+              <span className="w-1.5 h-1.5 rounded-full bg-[#C5A059] animate-pulse" />
               <span>{currentPersonality.name}</span>
             </div>
           </div>

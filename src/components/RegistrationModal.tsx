@@ -16,7 +16,7 @@ export default function RegistrationModal({ isOpen, onClose, selectedCategory }:
 
   if (!isOpen) return null;
 
-  const googleFormUrl = "https://forms.gle/SERENTAK2026RegistrationFormPlaceholder";
+  const googleFormUrl = "https://ipb.link/registrasi-lomba-serentak-2026";
 
   const handleCopyLink = () => {
     navigator.clipboard.writeText(googleFormUrl);
@@ -106,7 +106,7 @@ export default function RegistrationModal({ isOpen, onClose, selectedCategory }:
             </p>
 
             <a
-              href="https://forms.google.com"
+              href="https://ipb.link/registrasi-lomba-serentak-2026"
               target="_blank"
               rel="noopener noreferrer"
               className="w-full py-4 px-6 rounded-xl bg-gradient-to-r from-[#E5C378] via-[#C5A059] to-[#9E7B35] text-[#3D030D] hover:brightness-110 font-bold uppercase tracking-widest text-xs sm:text-sm shadow-xl flex items-center justify-center gap-3 transition-all cursor-pointer border border-[#FFF3C4]/60"

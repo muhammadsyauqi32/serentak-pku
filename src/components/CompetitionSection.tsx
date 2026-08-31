@@ -75,20 +75,13 @@ export default function CompetitionSection({ onOpenRegister }: CompetitionProps)
     <section id="lomba" className="py-24 bg-[#F7F1E8] relative text-[#1F1F1F] border-b border-[#C5A059]/20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
-        {/* Section Header */}
+        {/* Section Header (Requirement 4: <h2>Kompetisi</h2>) */}
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#5A0B14]/10 border border-[#5A0B14]/20 mb-4 font-subheading">
-            <Trophy className="w-4 h-4 text-[#5A0B14]" />
-            <span className="text-xs font-bold uppercase tracking-widest text-[#5A0B14]">
-              Cabang Perlombaan
-            </span>
-          </div>
-
           <h2 className="font-heading text-3xl sm:text-4xl md:text-5xl text-[#5A0B14] mb-4 uppercase">
-            Kompetisi SERENTAK 5.0
+            Kompetisi
           </h2>
           <p className="font-body text-sm sm:text-base text-[#6B3E2E] max-w-2xl mx-auto">
-            Wadah pengembangan berpikir kritis, berargumentasi, serta penyampaian gagasan bagi mahasiswa KM PKU IPB University Angkatan 63.
+            Ajang <strong className="text-[#5A0B14]">kompetisi mahasiswa IPB</strong> dan <strong className="text-[#5A0B14]">lomba mahasiswa 2026</strong> yang menghadirkan ruang kompetisi debat, retorika orasi, serta ekspresi kreatif meliputi <strong className="text-[#5A0B14]">lomba puisi mahasiswa</strong> dan <strong className="text-[#5A0B14]">lomba propaganda mahasiswa</strong>.
           </p>
           <div className="w-20 h-1 bg-[#C5A059] mx-auto rounded-full mt-6" />
         </div>
@@ -133,13 +126,15 @@ export default function CompetitionSection({ onOpenRegister }: CompetitionProps)
                     <span>Detail Syarat</span>
                   </button>
 
-                  <button
-                    onClick={() => onOpenRegister(comp.title)}
+                  <a
+                    href="https://ipb.link/registrasi-lomba-serentak-2026"
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="w-full sm:w-1/2 py-3 rounded-md bg-[#C5A059] hover:bg-[#E5C378] text-[#1A0B0B] font-bold text-xs shadow-md transition-colors flex items-center justify-center gap-2 cursor-pointer border border-[#C5A059]"
                   >
                     <span>Daftar Lomba</span>
                     <ArrowUpRight className="w-4 h-4" />
-                  </button>
+                  </a>
                 </div>
               </motion.div>
             );

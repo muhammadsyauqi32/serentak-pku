@@ -16,11 +16,6 @@ export default function GuidebookSection({ onOpenGuidebook }: GuidebookSectionPr
         <div className="p-8 sm:p-12 rounded-2xl bg-[#1A0B0B] border border-[#C5A059]/40 shadow-xl flex flex-col lg:flex-row items-center justify-between gap-8">
           {/* Left Text Block */}
           <div className="space-y-4 text-center lg:text-left max-w-2xl">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#5A0B14] border border-[#C5A059]/40 text-[#C5A059] text-xs font-subheading font-bold uppercase tracking-wider">
-              <BookOpenCheck className="w-4 h-4" />
-              <span>Dokumen Panduan Resmi</span>
-            </div>
-
             <h2 className="font-heading text-3xl sm:text-4xl md:text-5xl text-[#C5A059] uppercase tracking-tight">
               Panduan Perlombaan
             </h2>

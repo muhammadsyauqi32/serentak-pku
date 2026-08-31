@@ -5,13 +5,11 @@ import Navbar from "@/components/Navbar";
 import HeroSection from "@/components/HeroSection";
 import AboutSection from "@/components/AboutSection";
 import ThemeSection from "@/components/ThemeSection";
-import EventSeriesSection from "@/components/EventSeriesSection";
 import CompetitionSection from "@/components/CompetitionSection";
 import TimelineSection from "@/components/TimelineSection";
 import RequirementsSection from "@/components/RequirementsSection";
 import GuidebookSection from "@/components/GuidebookSection";
 import FAQSection from "@/components/FAQSection";
-import SponsorSection from "@/components/SponsorSection";
 import ContactSection from "@/components/ContactSection";
 import Footer from "@/components/Footer";
 import RegistrationModal from "@/components/RegistrationModal";
@@ -23,9 +21,8 @@ export default function Home() {
   const [isGuidebookOpen, setIsGuidebookOpen] = useState(false);
   const [selectedCategory, setSelectedCategory] = useState<string | undefined>(undefined);
 
-  const handleOpenRegister = (categoryName?: string) => {
-    setSelectedCategory(categoryName);
-    setIsRegisterOpen(true);
+  const handleOpenRegister = () => {
+    window.open("https://ipb.link/registrasi-lomba-serentak-2026", "_blank", "noopener,noreferrer");
   };
 
   return (
@@ -50,28 +47,22 @@ export default function Home() {
         {/* 3. Theme Section */}
         <ThemeSection />
 
-        {/* 4. Event Series Section */}
-        <EventSeriesSection />
-
-        {/* 5. Competition Categories */}
+        {/* 4. Competition Categories */}
         <CompetitionSection onOpenRegister={handleOpenRegister} />
 
-        {/* 6. Event Timeline */}
+        {/* 5. Event Timeline */}
         <TimelineSection />
 
-        {/* 7. Requirements */}
+        {/* 6. Requirements */}
         <RequirementsSection />
 
-        {/* 8. Guidebook CTA */}
+        {/* 7. Guidebook CTA */}
         <GuidebookSection onOpenGuidebook={() => setIsGuidebookOpen(true)} />
 
-        {/* 9. FAQ Accordion */}
+        {/* 8. FAQ Accordion */}
         <FAQSection />
 
-        {/* 10. Sponsor & Partner Section */}
-        <SponsorSection />
-
-        {/* 11. Contact & Helpdesk */}
+        {/* 9. Contact & Helpdesk */}
         <ContactSection />
       </main>
 

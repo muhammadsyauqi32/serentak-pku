@@ -32,11 +32,6 @@ export default function RequirementsSection() {
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#5A0B14]/10 border border-[#5A0B14]/20 mb-4 font-subheading">
-            <ClipboardCheck className="w-4 h-4 text-[#5A0B14]" />
-            <span className="text-xs font-bold uppercase tracking-widest text-[#5A0B14]">Regulasi Peserta</span>
-          </div>
-
           <h2 className="font-heading text-3xl sm:text-4xl md:text-5xl text-[#5A0B14] mb-4 uppercase">
             Persyaratan & Ketentuan
           </h2>

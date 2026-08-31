@@ -23,16 +23,28 @@ export default function ThemeSection() {
           </span>
         </motion.div>
 
-        {/* Title (Bungee Font) */}
+        {/* Section Heading (Requirement 4: <h2>Tema Kegiatan</h2>) */}
         <motion.h2
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ delay: 0.1 }}
-          className="font-heading text-3xl sm:text-5xl md:text-6xl text-[#C5A059] tracking-wide mb-6 leading-tight max-w-4xl mx-auto uppercase drop-shadow-sm"
+          className="font-heading text-3xl sm:text-4xl md:text-5xl text-[#C5A059] tracking-wide mb-4 leading-tight max-w-4xl mx-auto uppercase drop-shadow-sm"
         >
-          Politrik: Seni Berkuasa dengan Propaganda
+          Tema Kegiatan
         </motion.h2>
+        <div className="w-20 h-1 bg-[#C5A059] mx-auto rounded-full mb-6" />
+
+        {/* Theme Title */}
+        <motion.h3
+          initial={{ opacity: 0, y: 15 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ delay: 0.15 }}
+          className="font-subheading text-2xl sm:text-4xl md:text-5xl font-bold text-[#F7F1E8] mb-6 uppercase"
+        >
+          "Politrik: Seni Berkuasa dengan Propaganda"
+        </motion.h3>
 
         {/* Description (Space Grotesk Font) */}
         <motion.p
@@ -40,9 +52,9 @@ export default function ThemeSection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ delay: 0.2 }}
-          className="font-subheading max-w-2xl mx-auto text-base sm:text-lg md:text-xl text-[#F7F1E8]/90 leading-relaxed font-medium"
+          className="font-subheading max-w-3xl mx-auto text-base sm:text-lg text-[#F7F1E8]/90 leading-relaxed font-medium"
         >
-          Tema ini menjadi gagasan utama SERENTAK 5.0 X RBB 2026.
+          Tema ini menjadi gagasan utama SERENTAK 5.0 X RBB 2026 yang diselenggarakan oleh Departemen Kajian Aksi dan Strategis Ormawa Eksekutif PKU, menghadirkan ruang literasi mahasiswa dan diskusi kritis atas dinamika isu sosial-politik mahasiswa.
         </motion.p>
       </div>
     </section>

@@ -10,34 +10,34 @@ export default function FAQSection() {
 
   const faqs = [
     {
-      question: "Siapa saja yang dapat mengikuti SERENTAK 5.0 X RBB 2026?",
+      question: "Apa itu SERENTAK 5.0 X RBB 2026?",
       answer:
-        "Kegiatan ini merupakan kegiatan perlombaan sekaligus event interaktif yang melibatkan partisipasi aktif mahasiswa KM PKU IPB University Angkatan 63.",
-      category: "Peserta",
+        "SERENTAK 5.0 X RBB 2026 merupakan program kerja Departemen Kajian Aksi dan Strategis Ormawa Eksekutif PKU yang menghadirkan ruang kompetisi, literasi, dan ekspresi mahasiswa melalui tema Politrik: Seni Berkuasa dengan Propaganda.",
+      category: "Umum",
     },
     {
-      question: "Apa saja cabang perlombaan yang diselenggarakan?",
+      question: "Siapa penyelenggara SERENTAK 5.0 X RBB 2026?",
       answer:
-        "Terdapat dua cabang perlombaan utama, yaitu Kompetisi Debat dan Kompetisi Orasi, yang mengasah kemampuan berpikir kritis, berargumentasi, serta keberanian dalam menyampaikan gagasan sosial-politik.",
-      category: "Perlombaan",
+        "SERENTAK 5.0 X RBB 2026 diselenggarakan oleh Departemen Kajian Aksi dan Strategis Ormawa Eksekutif PKU IPB University.",
+      category: "Penyelenggara",
     },
     {
-      question: "Kapan jadwal rentang pendaftaran dibuka?",
+      question: "Kapan kegiatan dilaksanakan?",
       answer:
-        "Pendaftaran peserta dibuka pada tanggal 1 - 13 September 2026. Dilanjutkan dengan Technical Meeting pada 16 September 2026.",
+        "Pendaftaran peserta dibuka pada 1 - 13 September 2026, dilanjutkan Technical Meeting pada 16 September 2026, Opening Ceremony & Penyisihan pada 19 September 2026, Semifinal pada 20 September 2026, serta Closing Ceremony & Babak Final pada 26 September 2026.",
       category: "Jadwal",
     },
     {
-      question: "Bagaimana alur tahapan pelaksanaan perlombaan?",
+      question: "Bagaimana cara mengikuti kegiatan?",
       answer:
-        "Tahapan meliputi Opening Ceremony dan Babak Penyisihan (19 September 2026), Babak Lanjutan dan Semifinal (20 September 2026), serta Closing Ceremony dan Babak Final (26 September 2026).",
-      category: "Rangkaian",
+        "Mahasiswa dapat mendaftar secara online melalui tautan resmi pendaftaran SERENTAK 5.0 X RBB 2026 di ipb.link/registrasi-lomba-serentak-2026 dan mengunduh guidebook teknis pelaksanaan lomba.",
+      category: "Pendaftaran",
     },
     {
-      question: "Apa itu Ruang Baca Bicara (RBB) 2026?",
+      question: "Apa saja cabang lomba mahasiswa yang diselenggarakan?",
       answer:
-        "RBB 2026 adalah ruang luar ruangan yang santai, edukatif, dan interaktif yang menawarkan dua tahapan proses kesadaran kritis: 'Baca' (menyerap realitas sosial-politik) dan 'Bicara' (keberanian menyuarakan gagasan). Penutupan diisi dengan pameran buku, talkshow, final perlombaan, dan awarding.",
-      category: "RBB",
+        "Terdapat dua cabang perlombaan utama, yaitu Kompetisi Debat dan Kompetisi Orasi Mahasiswa, yang mengasah kemampuan berpikir kritis, retorika berargumentasi, serta keberanian menyampaikan gagasan sosial-politik.",
+      category: "Perlombaan",
     },
   ];
 
@@ -50,20 +50,13 @@ export default function FAQSection() {
   return (
     <section id="faq" className="py-24 bg-[#F7F1E8] relative text-[#1F1F1F] border-b border-[#C5A059]/20">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        {/* Section Header */}
+        {/* Section Header (Requirement 4: <h2>FAQ</h2>) */}
         <div className="text-center max-w-3xl mx-auto mb-12">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#5A0B14]/10 border border-[#5A0B14]/20 mb-4 font-subheading">
-            <HelpCircle className="w-4 h-4 text-[#5A0B14]" />
-            <span className="text-xs font-bold uppercase tracking-widest text-[#5A0B14]">
-              Tanya Jawab (FAQ)
-            </span>
-          </div>
-
           <h2 className="font-heading text-3xl sm:text-4xl md:text-5xl text-[#5A0B14] mb-4 uppercase">
-            Pertanyaan Sering Diajukan
+            FAQ
           </h2>
           <p className="font-body text-sm sm:text-base text-[#6B3E2E]">
-            Informasi seputar pelaksanaan SERENTAK 5.0 X RBB 2026.
+            Pertanyaan Sering Diajukan Seputar SERENTAK 5.0 X RBB 2026
           </p>
           <div className="w-20 h-1 bg-[#C5A059] mx-auto rounded-full mt-6" />
         </div>
