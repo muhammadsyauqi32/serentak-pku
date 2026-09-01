@@ -58,8 +58,8 @@ export default function Navbar({ onOpenRegister, onOpenGuidebook }: NavbarProps)
     <>
       <header
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled
-            ? "bg-[#1A0B0B] py-2 sm:py-2.5 border-b border-[#C5A059]/40 shadow-2xl"
-            : "bg-[#1A0B0B]/95 backdrop-blur-sm py-2.5 sm:py-3 border-b border-[#C5A059]/25"
+          ? "bg-[#1A0B0B] py-2 sm:py-2.5 border-b border-[#C5A059]/40 shadow-2xl"
+          : "bg-[#1A0B0B]/95 backdrop-blur-sm py-2.5 sm:py-3 border-b border-[#C5A059]/25"
           }`}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -68,7 +68,7 @@ export default function Navbar({ onOpenRegister, onOpenGuidebook }: NavbarProps)
             <a href="#home" className="flex items-center gap-3 group shrink-0">
               <div className="w-16 sm:w-20 h-10 relative flex items-center justify-center">
                 <Image
-                  src="/images/logo.png"
+                  src="/images/logo.webp"
                   alt="Logo SERENTAK 5.0 X RBB 2026"
                   width={80}
                   height={45}
@@ -108,7 +108,7 @@ export default function Navbar({ onOpenRegister, onOpenGuidebook }: NavbarProps)
             <div className="flex lg:hidden items-center font-subheading">
               <button
                 onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-                className="p-2 text-[#C5A059] hover:text-[#F7F1E8] transition-colors"
+                className="p-2.5 text-[#C5A059] hover:text-[#F7F1E8] transition-colors min-w-[44px] min-h-[44px] flex items-center justify-center cursor-pointer"
                 aria-label="Toggle Navigation Menu"
               >
                 {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
@@ -129,10 +129,7 @@ export default function Navbar({ onOpenRegister, onOpenGuidebook }: NavbarProps)
             className="fixed inset-x-0 top-[60px] z-40 lg:hidden bg-[#1A0B0B] border-b border-[#C5A059]/40 shadow-2xl px-6 py-6 font-subheading"
           >
             <div className="flex flex-col gap-3">
-              <div className="text-[10px] uppercase tracking-widest text-[#C5A059] font-bold pb-2 border-b border-[#C5A059]/20 flex items-center justify-between">
-                <span>Navigasi Publikasi</span>
-                <span className="text-[#F7F1E8]/60">EDISI V 2026</span>
-              </div>
+
               {navLinks.map((link) => {
                 const isActive = activeSection === link.id || (activeSection === "tema" && link.id === "tentang");
                 return (
@@ -141,8 +138,8 @@ export default function Navbar({ onOpenRegister, onOpenGuidebook }: NavbarProps)
                     href={link.href}
                     onClick={() => setMobileMenuOpen(false)}
                     className={`flex items-center justify-between px-3 py-2 text-xs font-semibold uppercase tracking-wider transition-colors border-b border-[#C5A059]/10 ${isActive
-                        ? "text-[#C5A059] font-bold"
-                        : "text-[#F7F1E8]/90 hover:text-[#C5A059]"
+                      ? "text-[#C5A059] font-bold"
+                      : "text-[#F7F1E8]/90 hover:text-[#C5A059]"
                       }`}
                   >
                     <span>{link.name}</span>

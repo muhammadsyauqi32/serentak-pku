@@ -1,7 +1,3 @@
-"use client";
-
-import { Code } from "lucide-react";
-
 export default function Footer() {
   return (
     <footer className="bg-[#1A0B0B] text-[#F7F1E8] border-t-2 border-[#C5A059] pt-16 pb-12 relative overflow-hidden">

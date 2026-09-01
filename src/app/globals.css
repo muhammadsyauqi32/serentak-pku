@@ -79,3 +79,38 @@ body {
 ::-webkit-scrollbar-thumb:hover {
   background: #C5A059;
 }
+
+/* Hardware GPU Acceleration & Optimized Keyframe Animations */
+.gpu-layer {
+  transform: translateZ(0);
+  backface-visibility: hidden;
+}
+
+@keyframes mascot-float {
+  0%, 100% {
+    transform: translateY(0px) rotate(-1.5deg);
+  }
+  50% {
+    transform: translateY(-12px) rotate(1.5deg);
+  }
+}
+
+.animate-mascot-float {
+  animation: mascot-float 3.8s ease-in-out infinite;
+  will-change: transform;
+}
+
+@keyframes spin-slow {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-spin-slow {
+  animation: spin-slow 40s linear infinite;
+  will-change: transform;
+}
+

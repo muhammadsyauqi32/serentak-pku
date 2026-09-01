@@ -8,7 +8,7 @@ import { X, Volume2, ChevronUp } from "lucide-react";
 interface SectionPersonality {
   id: string;
   name: string;
-  pose: "/images/mascot_sleep.png" | "/images/mascot_stand.png";
+  pose: "/images/mascot_sleep.webp" | "/images/mascot_stand.webp";
   badge: string;
   message: string;
 }
@@ -17,70 +17,70 @@ const SECTION_DATA: Record<string, SectionPersonality> = {
   home: {
     id: "home",
     name: "Beranda",
-    pose: "/images/mascot_sleep.png",
+    pose: "/images/mascot_sleep.webp",
     badge: "Selamat Datang!",
     message: "Halo! Selamat datang di SERENTAK 5.0 X RBB 2026 partisipasi aktif mahasiswa KM PKU IPB University Angkatan 63!",
   },
   sayembara: {
     id: "sayembara",
     name: "Sayembara Talent",
-    pose: "/images/mascot_stand.png",
+    pose: "/images/mascot_stand.webp",
     badge: "Open Registration",
     message: "Tunjukkan kemampuan public speaking milikmu dengan mendaftar Sayembara MC & Moderator!",
   },
   tentang: {
     id: "tentang",
     name: "Tentang",
-    pose: "/images/mascot_stand.png",
+    pose: "/images/mascot_stand.webp",
     badge: "Semarak Untuk Bergerak",
     message: "SERENTAK 5.0 dikolaborasikan dengan Ruang Baca Bicara (RBB) 2026 menghadirkan konsep edukatif, santai, dan interaktif!",
   },
   tema: {
     id: "tema",
     name: "Tema Acara",
-    pose: "/images/mascot_stand.png",
+    pose: "/images/mascot_stand.webp",
     badge: "Tema Utama",
     message: "Politrik: Seni Berkuasa dengan Propaganda — gagasan utama SERENTAK 5.0 X RBB 2026!",
   },
   lomba: {
     id: "lomba",
     name: "Cabang Lomba",
-    pose: "/images/mascot_sleep.png",
+    pose: "/images/mascot_sleep.webp",
     badge: "Kompetisi",
     message: "Siapkan gagasan terbaikmu di Kompetisi Debat dan Kompetisi Orasi KM PKU Angkatan 63!",
   },
   jadwal: {
     id: "jadwal",
     name: "Timeline",
-    pose: "/images/mascot_stand.png",
+    pose: "/images/mascot_stand.webp",
     badge: "Catat Tanggal",
     message: "Pendaftaran dibuka 1 - 13 September 2026. Jangan sampai terlewat ya!",
   },
   syarat: {
     id: "syarat",
     name: "Persyaratan",
-    pose: "/images/mascot_stand.png",
+    pose: "/images/mascot_stand.webp",
     badge: "Ketentuan",
     message: "Pastikan kamu mahasiswa aktif KM PKU IPB University Angkatan 63!",
   },
   guidebook: {
     id: "guidebook",
     name: "Buku Panduan",
-    pose: "/images/mascot_stand.png",
+    pose: "/images/mascot_stand.webp",
     badge: "Guidebook Resmi",
-    message: "Unduh Buku Panduan resmi untuk membaca regulasi lengkap perlombaan!",
+    message: "Akses Buku Panduan resmi di Google Drive untuk membaca regulasi lengkap perlombaan!",
   },
   faq: {
     id: "faq",
     name: "Tanya Jawab",
-    pose: "/images/mascot_sleep.png",
+    pose: "/images/mascot_sleep.webp",
     badge: "FAQ & Bantuan",
     message: "Ada pertanyaan seputar pendaftaran? Temukan jawabannya di FAQ!",
   },
   kontak: {
     id: "kontak",
     name: "Contact Person",
-    pose: "/images/mascot_sleep.png",
+    pose: "/images/mascot_sleep.webp",
     badge: "Helpdesk",
     message: "Tim Panitia SERENTAK siap membantu pertanyaan pendaftaranmu!",
   },
@@ -221,18 +221,7 @@ export default function InteractiveMascot() {
           <div className="relative flex flex-col items-center">
             {/* Mascot Base Stand Graphic */}
             <div className="relative w-20 h-20 sm:w-24 sm:h-24">
-              <motion.div
-                animate={{
-                  y: [0, -6, 0],
-                  rotate: [-1, 1, -1],
-                }}
-                transition={{
-                  duration: 3,
-                  repeat: Infinity,
-                  ease: "easeInOut",
-                }}
-                className="w-full h-full relative flex items-center justify-center"
-              >
+              <div className="w-full h-full relative flex items-center justify-center animate-mascot-float gpu-layer">
                 <Image
                   src={currentPersonality.pose}
                   alt="Maskot SERENTAK 5.0 X RBB 2026"
@@ -240,7 +229,7 @@ export default function InteractiveMascot() {
                   sizes="(max-width: 640px) 80px, 96px"
                   className="object-contain drop-shadow-md"
                 />
-              </motion.div>
+              </div>
             </div>
 
             {/* Minimize button */}

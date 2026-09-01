@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import dynamic from "next/dynamic";
 import Navbar from "@/components/Navbar";
 import HeroSection from "@/components/HeroSection";
 import TalentSection from "@/components/TalentSection";
@@ -10,12 +11,14 @@ import CompetitionSection from "@/components/CompetitionSection";
 import TimelineSection from "@/components/TimelineSection";
 import RequirementsSection from "@/components/RequirementsSection";
 import GuidebookSection from "@/components/GuidebookSection";
-import FAQSection from "@/components/FAQSection";
 import ContactSection from "@/components/ContactSection";
 import Footer from "@/components/Footer";
-import RegistrationModal from "@/components/RegistrationModal";
-import GuidebookModal from "@/components/GuidebookModal";
-import InteractiveMascot from "@/components/InteractiveMascot";
+
+// Dynamic Imports for Heavy / Interactive Below-the-Fold Components & Modals
+const FAQSection = dynamic(() => import("@/components/FAQSection"));
+const InteractiveMascot = dynamic(() => import("@/components/InteractiveMascot"), { ssr: false });
+const RegistrationModal = dynamic(() => import("@/components/RegistrationModal"), { ssr: false });
+const GuidebookModal = dynamic(() => import("@/components/GuidebookModal"), { ssr: false });
 
 export default function Home() {
   const [isRegisterOpen, setIsRegisterOpen] = useState(false);
@@ -51,7 +54,7 @@ export default function Home() {
         {/* 4. Open Registration Sayembara MC & Moderator */}
         <TalentSection />
 
-        {/* 5. Competition Categories */}
+        {/* 6. Main Competition Categories */}
         <CompetitionSection onOpenRegister={handleOpenRegister} />
 
         {/* 5. Event Timeline */}

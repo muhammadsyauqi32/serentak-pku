@@ -23,7 +23,7 @@ export default function CompetitionSection({ onOpenRegister }: CompetitionProps)
   const competitions = [
     {
       id: "debat",
-      code: "KATALOG 01",
+      code: "01",
       title: "Kompetisi Debat",
       category: "KM PKU Angkatan 63",
       icon: Users,
@@ -48,7 +48,7 @@ export default function CompetitionSection({ onOpenRegister }: CompetitionProps)
     },
     {
       id: "orasi",
-      code: "KATALOG 02",
+      code: "02",
       title: "Kompetisi Orasi",
       category: "KM PKU Angkatan 63",
       icon: Mic,

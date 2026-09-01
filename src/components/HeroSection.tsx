@@ -16,13 +16,9 @@ function HeroMascot({ sizeClass, imageScaleClass = "scale-100" }: { sizeClass: s
       <div className="hidden lg:block absolute inset-0 m-auto w-[85%] h-[85%] rounded-full bg-gradient-to-tr from-[#C5A059]/40 via-[#9E1B28]/30 to-transparent blur-3xl pointer-events-none scale-125 -z-10" />
 
       {/* Rotating Ornate Golden Decorative Rings (Desktop Only) */}
-      <motion.div
-        animate={{ rotate: 360 }}
-        transition={{ duration: 40, repeat: Infinity, ease: "linear" }}
-        className="hidden lg:flex absolute inset-0 m-auto w-[80%] h-[80%] rounded-full border border-dashed border-[#C5A059]/40 pointer-events-none -z-10 items-center justify-center"
-      >
+      <div className="hidden lg:flex absolute inset-0 m-auto w-[80%] h-[80%] rounded-full border border-dashed border-[#C5A059]/40 pointer-events-none -z-10 items-center justify-center animate-spin-slow">
         <div className="w-[80%] h-[80%] rounded-full border border-dotted border-[#C5A059]/30" />
-      </motion.div>
+      </div>
 
       {/* Radial Sunburst Rays (Desktop Only) */}
       <div className="hidden lg:flex absolute inset-0 m-auto w-[85%] h-[85%] opacity-25 pointer-events-none -z-10 items-center justify-center">
@@ -42,27 +38,16 @@ function HeroMascot({ sizeClass, imageScaleClass = "scale-100" }: { sizeClass: s
       </div>
 
       {/* Mascot Image Showcase */}
-      <motion.div
-        animate={{
-          y: [0, -14, 0],
-          rotate: [-1.5, 1.5, -1.5],
-        }}
-        transition={{
-          duration: 3.8,
-          repeat: Infinity,
-          ease: "easeInOut",
-        }}
-        className={`relative ${sizeClass} flex items-center justify-center py-2 group z-10`}
-      >
+      <div className={`relative ${sizeClass} flex items-center justify-center py-2 group z-10 animate-mascot-float gpu-layer`}>
         <Image
-          src="/images/mascot_stand.png"
+          src="/images/mascot_stand.webp"
           alt="Maskot SERENTAK 5.0 X RBB 2026"
           fill
-          sizes="(max-width: 768px) 500px, (max-width: 1200px) 700px, 900px"
+          sizes="(max-width: 768px) 320px, (max-width: 1200px) 500px, 600px"
           className={`object-contain drop-shadow-[0_25px_50px_rgba(0,0,0,0.9)] ${imageScaleClass} transition-transform duration-300 group-hover:scale-105`}
           priority
         />
-      </motion.div>
+      </div>
     </div>
   );
 }

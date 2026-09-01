@@ -23,7 +23,7 @@ export default function ContactSection() {
   return (
     <section id="kontak" className="py-24 bg-[#1A0B0B] text-[#F7F1E8] relative overflow-hidden border-b border-[#C5A059]/40">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        
+
         {/* Section Editorial Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between border-b border-[#C5A059]/40 pb-6 mb-16 gap-4">
           <div>
@@ -76,7 +76,7 @@ export default function ContactSection() {
               <p className="font-body text-xs text-[#F7F1E8]/70 mb-6">Informasi pengumuman lomba, twibbon, dan pemenang.</p>
             </div>
             <a
-              href="https://instagram.com"
+              href="https://instagram.com/serentak.pku/"
               target="_blank"
               rel="noopener noreferrer"
               className="w-full py-3 bg-[#1A0B0B] hover:bg-[#5A0B14] border border-[#C5A059]/50 text-xs font-bold uppercase tracking-widest text-[#C5A059] flex items-center justify-center gap-2 transition-colors text-center"

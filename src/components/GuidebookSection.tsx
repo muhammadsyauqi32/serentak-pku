@@ -1,6 +1,7 @@
 "use client";
 
-import { Download, BookOpenCheck, CheckCircle2 } from "lucide-react";
+import { ExternalLink, BookOpenCheck, CheckCircle2 } from "lucide-react";
+import { GUIDEBOOK_DRIVE_URL } from "./GuidebookModal";
 
 interface GuidebookSectionProps {
   onOpenGuidebook: () => void;
@@ -23,7 +24,7 @@ export default function GuidebookSection({ onOpenGuidebook }: GuidebookSectionPr
             </h2>
 
             <p className="font-body text-sm sm:text-base text-[#F7F1E8]/90 leading-relaxed">
-              Pelajari seluruh ketentuan teknis perlombaan Debat dan Orasi, alur babak penyisihan hingga final, serta regulasi Ruang Baca Bicara (RBB) 2026 melalui guidebook resmi SERENTAK.
+              Pelajari seluruh ketentuan teknis perlombaan Debat dan Orasi, alur babak penyisihan hingga final, serta regulasi Ruang Baca Bicara (RBB) 2026 melalui guidebook resmi SERENTAK yang tersedia di Google Drive.
             </p>
 
             {/* Checklist inside banner */}
@@ -50,15 +51,25 @@ export default function GuidebookSection({ onOpenGuidebook }: GuidebookSectionPr
             </div>
           </div>
 
-          {/* Right Action Button */}
-          <div className="shrink-0 w-full lg:w-auto font-subheading">
+          {/* Right Action Buttons */}
+          <div className="shrink-0 w-full lg:w-auto font-subheading flex flex-col sm:flex-row lg:flex-col gap-3">
             <button
               onClick={onOpenGuidebook}
               className="w-full lg:w-auto px-8 py-4 bg-[#C5A059] hover:bg-[#E5C378] text-[#1A0B0B] font-bold uppercase tracking-widest text-xs shadow-lg transition-colors flex items-center justify-center gap-3 border border-[#C5A059] cursor-pointer"
             >
-              <Download className="w-5 h-5" />
-              <span>Download Guidebook (PDF)</span>
+              <BookOpenCheck className="w-5 h-5" />
+              <span>Pratinjau Guidebook</span>
             </button>
+
+            <a
+              href={GUIDEBOOK_DRIVE_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-full lg:w-auto px-6 py-3.5 bg-[#1A0B0B] hover:bg-[#2A1212] text-[#C5A059] font-bold uppercase tracking-widest text-xs transition-colors flex items-center justify-center gap-2 border border-[#C5A059]/50 cursor-pointer"
+            >
+              <ExternalLink className="w-4 h-4" />
+              <span>Buka di Google Drive</span>
+            </a>
           </div>
         </div>
       </div>

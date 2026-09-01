@@ -40,11 +40,11 @@ export const metadata: Metadata = {
   authors: [{ name: "Departemen Kajian Aksi dan Strategis Ormawa Eksekutif PKU" }],
   icons: {
     icon: [
-      { url: "/images/logo.png", type: "image/png" },
+      { url: "/images/logo.webp", type: "image/webp" },
       { url: "/icon.png", type: "image/png" },
     ],
-    shortcut: "/images/logo.png",
-    apple: "/images/logo.png",
+    shortcut: "/images/logo.webp",
+    apple: "/images/logo.webp",
   },
   openGraph: {
     title: "SERENTAK 5.0 X RBB 2026",
@@ -54,7 +54,7 @@ export const metadata: Metadata = {
     type: "website",
     images: [
       {
-        url: "/images/og-image.png",
+        url: "/images/og-image.webp",
         width: 1200,
         height: 630,
         alt: "SERENTAK 5.0 X RBB 2026 - Politrik: Seni Berkuasa dengan Propaganda",
@@ -65,7 +65,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "SERENTAK 5.0 X RBB 2026",
     description: "Politrik: Seni Berkuasa dengan Propaganda",
-    images: ["/images/og-image.png"],
+    images: ["/images/og-image.webp"],
   },
 };
 
