@@ -39,7 +39,10 @@ export const metadata: Metadata = {
   ],
   authors: [{ name: "Departemen Kajian Aksi dan Strategis Ormawa Eksekutif PKU" }],
   icons: {
-    icon: "/images/logo.png",
+    icon: [
+      { url: "/images/logo.png", type: "image/png" },
+      { url: "/icon.png", type: "image/png" },
+    ],
     shortcut: "/images/logo.png",
     apple: "/images/logo.png",
   },

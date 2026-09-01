@@ -20,7 +20,7 @@ export default function Footer() {
             </div>
 
             <div className="space-y-1 font-body text-xs sm:text-sm text-[#F7F1E8]/85">
-              <p className="font-subheading font-bold text-[#C5A059] text-xs uppercase tracking-widest">PUBLIKASI KEMAHASISWAAN:</p>
+
               <p className="font-semibold text-[#F7F1E8]">Departemen Kajian Aksi dan Strategis</p>
               <p className="text-[#F7F1E8]/70">Ormawa Eksekutif PKU — KM PKU IPB University</p>
             </div>

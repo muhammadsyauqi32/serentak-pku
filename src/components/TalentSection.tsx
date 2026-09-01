@@ -1,7 +1,8 @@
 "use client";
 
+import { useState } from "react";
 import { motion } from "framer-motion";
-import { Mic, MessageSquare, Lock, Calendar, ArrowUpRight, Radio } from "lucide-react";
+import { Mic, MessageSquare, Lock, Calendar, ArrowUpRight, Radio, Phone, Copy, Check } from "lucide-react";
 
 // ============================================================================
 // CONFIGURATION & GOOGLE FORM LINKS
@@ -14,6 +15,14 @@ export const MC_FORM_URL = "https://ipb.link/sayembara-mc-serentak-2026";
 export const MODERATOR_FORM_URL = "https://ipb.link/sayembara-moderator-serentak-2026";
 
 export default function TalentSection() {
+  const [copiedCP, setCopiedCP] = useState(false);
+
+  const handleCopyCP = (text: string) => {
+    navigator.clipboard.writeText(text);
+    setCopiedCP(true);
+    setTimeout(() => setCopiedCP(false), 2000);
+  };
+
   const talents = [
     {
       id: "sayembara-mc",
@@ -42,7 +51,7 @@ export default function TalentSection() {
   return (
     <section id="sayembara" className="py-24 bg-[#1A0B0B] relative text-[#F7F1E8] border-b border-[#C5A059]/40 overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        
+
         {/* Section Editorial Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between border-b border-[#C5A059]/40 pb-6 mb-16 gap-4">
           <div>
@@ -54,7 +63,7 @@ export default function TalentSection() {
               Sayembara MC & Moderator
             </h2>
           </div>
-          
+
           {!IS_REGISTRATION_OPEN && (
             <div className="inline-flex items-center gap-2 px-3.5 py-1.5 bg-[#5A0B14] border border-[#C5A059]/50 text-[#C5A059] font-subheading text-xs font-bold uppercase tracking-wider">
               <Calendar className="w-4 h-4 shrink-0 text-[#C5A059]" />
@@ -144,6 +153,52 @@ export default function TalentSection() {
             );
           })}
         </div>
+
+        {/* Contact Person Box for Sayembara */}
+        <motion.div
+          initial={{ opacity: 0, y: 15 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.4, delay: 0.3 }}
+          className="mt-12 p-6 sm:p-8 bg-[#5A0B14]/40 border border-[#C5A059]/40 max-w-5xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6"
+        >
+          <div className="flex items-start sm:items-center gap-4 w-full md:w-auto">
+            <div className="p-3 bg-[#1A0B0B] border border-[#C5A059] text-[#C5A059] shrink-0">
+              <Phone className="w-5 h-5" />
+            </div>
+            <div>
+              <span className="text-xs font-subheading font-bold uppercase tracking-widest text-[#C5A059] block mb-0.5">
+                CONTACT PERSON SAYEMBARA
+              </span>
+              <h4 className="font-subheading text-lg font-bold text-[#F7F1E8]">
+                Sasikirana — <span className="text-[#C5A059]">+62 831-0052-9494</span>
+              </h4>
+              <p className="font-body text-xs text-[#F7F1E8]/70 mt-0.5">
+                Pertanyaan seputar alur pendaftaran, berkas, & persyaratan Sayembara MC & Moderator.
+              </p>
+            </div>
+          </div>
+
+          <div className="flex flex-col sm:flex-row items-center gap-3 w-full md:w-auto shrink-0 font-subheading">
+            <button
+              onClick={() => handleCopyCP("+6283100529494")}
+              className="w-full sm:w-auto px-5 py-3 bg-[#1A0B0B] hover:bg-[#2A1212] border border-[#C5A059]/50 text-[#C5A059] font-bold text-xs uppercase tracking-widest flex items-center justify-center gap-2 transition-colors cursor-pointer"
+            >
+              {copiedCP ? <Check className="w-4 h-4 text-green-400" /> : <Copy className="w-4 h-4" />}
+              <span>{copiedCP ? "Tersalin!" : "Salin No. WA"}</span>
+            </button>
+
+            <a
+              href="https://wa.me/6283100529494"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-full sm:w-auto px-6 py-3 bg-[#C5A059] hover:bg-[#E5C378] text-[#1A0B0B] font-bold text-xs uppercase tracking-widest flex items-center justify-center gap-2 transition-colors border border-[#C5A059] shadow-md"
+            >
+              <Phone className="w-4 h-4" />
+              <span>Hubungi WhatsApp</span>
+            </a>
+          </div>
+        </motion.div>
 
       </div>
     </section>

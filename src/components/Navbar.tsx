@@ -58,8 +58,8 @@ export default function Navbar({ onOpenRegister, onOpenGuidebook }: NavbarProps)
     <>
       <header
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled
-            ? "bg-[#1A0B0B] py-3 border-b border-[#C5A059]/40 shadow-2xl"
-            : "bg-[#1A0B0B]/95 backdrop-blur-sm py-4 border-b border-[#C5A059]/25"
+            ? "bg-[#1A0B0B] py-2 sm:py-2.5 border-b border-[#C5A059]/40 shadow-2xl"
+            : "bg-[#1A0B0B]/95 backdrop-blur-sm py-2.5 sm:py-3 border-b border-[#C5A059]/25"
           }`}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -87,7 +87,7 @@ export default function Navbar({ onOpenRegister, onOpenGuidebook }: NavbarProps)
             {/* Desktop Editorial Navigation Links */}
             <nav className="hidden lg:flex items-center space-x-6 font-subheading ml-auto">
               {navLinks.map((link) => {
-                const isActive = activeSection === link.id;
+                const isActive = activeSection === link.id || (activeSection === "tema" && link.id === "tentang");
                 return (
                   <a
                     key={link.name}
@@ -133,20 +133,23 @@ export default function Navbar({ onOpenRegister, onOpenGuidebook }: NavbarProps)
                 <span>Navigasi Publikasi</span>
                 <span className="text-[#F7F1E8]/60">EDISI V 2026</span>
               </div>
-              {navLinks.map((link) => (
-                <a
-                  key={link.name}
-                  href={link.href}
-                  onClick={() => setMobileMenuOpen(false)}
-                  className={`flex items-center justify-between px-3 py-2 text-xs font-semibold uppercase tracking-wider transition-colors border-b border-[#C5A059]/10 ${activeSection === link.id
-                      ? "text-[#C5A059] font-bold"
-                      : "text-[#F7F1E8]/90 hover:text-[#C5A059]"
-                    }`}
-                >
-                  <span>{link.name}</span>
-                  <ChevronRight className="w-4 h-4 text-[#C5A059]" />
-                </a>
-              ))}
+              {navLinks.map((link) => {
+                const isActive = activeSection === link.id || (activeSection === "tema" && link.id === "tentang");
+                return (
+                  <a
+                    key={link.name}
+                    href={link.href}
+                    onClick={() => setMobileMenuOpen(false)}
+                    className={`flex items-center justify-between px-3 py-2 text-xs font-semibold uppercase tracking-wider transition-colors border-b border-[#C5A059]/10 ${isActive
+                        ? "text-[#C5A059] font-bold"
+                        : "text-[#F7F1E8]/90 hover:text-[#C5A059]"
+                      }`}
+                  >
+                    <span>{link.name}</span>
+                    <ChevronRight className="w-4 h-4 text-[#C5A059]" />
+                  </a>
+                );
+              })}
             </div>
           </motion.div>
         )}

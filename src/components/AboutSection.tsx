@@ -157,9 +157,6 @@ export default function AboutSection() {
                 Tujuan Utama Kegiatan
               </h3>
             </div>
-            <span className="font-subheading text-xs font-bold text-[#6B3E2E] uppercase">
-              3 PILAR UTAMA
-            </span>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -173,18 +170,12 @@ export default function AboutSection() {
                 className="p-8 bg-[#FFFDF9] border border-[#C5A059]/40 hover:border-[#5A0B14] transition-all duration-200 flex flex-col justify-between"
               >
                 <div>
-                  <div className="flex items-center justify-between border-b border-[#C5A059]/30 pb-4 mb-6">
-                    <span className="font-heading text-2xl text-[#5A0B14]">{item.id}</span>
-                    <span className="font-subheading text-[10px] uppercase font-bold text-[#C5A059] tracking-wider">PILAR {item.id}</span>
-                  </div>
-                  <h4 className="font-subheading font-bold text-base text-[#5A0B14] uppercase mb-3">{item.title}</h4>
+                  <h4 className="font-subheading font-bold text-lg text-[#5A0B14] uppercase mb-3 pb-3 border-b border-[#C5A059]/30">
+                    {item.title}
+                  </h4>
                   <p className="font-body text-xs sm:text-sm text-[#1F1F1F] leading-relaxed">
                     {item.text}
                   </p>
-                </div>
-                <div className="mt-8 pt-4 border-t border-[#C5A059]/20 flex items-center gap-2 text-[11px] font-subheading font-bold text-[#5A0B14]">
-                  <CheckCircle2 className="w-3.5 h-3.5 text-[#5A0B14]" />
-                  <span>Komitmen KM PKU 63</span>
                 </div>
               </motion.div>
             ))}

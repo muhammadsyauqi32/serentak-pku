@@ -11,14 +11,44 @@ interface HeroSectionProps {
 
 function HeroMascot({ sizeClass }: { sizeClass: string }) {
   return (
-    <div className="relative flex flex-col items-center justify-center">
+    <div className="relative flex flex-col items-center justify-center w-full">
+      {/* Background Glow & Aura */}
+      <div className="absolute inset-0 m-auto w-[85%] h-[85%] rounded-full bg-gradient-to-tr from-[#C5A059]/40 via-[#9E1B28]/30 to-transparent blur-3xl pointer-events-none scale-125 -z-10" />
+
+      {/* Rotating Ornate Golden Decorative Rings */}
+      <motion.div
+        animate={{ rotate: 360 }}
+        transition={{ duration: 40, repeat: Infinity, ease: "linear" }}
+        className="absolute inset-0 m-auto w-[80%] h-[80%] rounded-full border border-dashed border-[#C5A059]/40 pointer-events-none -z-10 flex items-center justify-center"
+      >
+        <div className="w-[80%] h-[80%] rounded-full border border-dotted border-[#C5A059]/30" />
+      </motion.div>
+
+      {/* Radial Sunburst Rays */}
+      <div className="absolute inset-0 m-auto w-[85%] h-[85%] opacity-25 pointer-events-none -z-10 flex items-center justify-center">
+        <svg viewBox="0 0 200 200" className="w-full h-full text-[#C5A059]">
+          <g fill="none" stroke="currentColor" strokeWidth="0.6" strokeDasharray="2 3">
+            {[...Array(16)].map((_, i) => (
+              <line
+                key={i}
+                x1="100"
+                y1="100"
+                x2={100 + 95 * Math.cos((i * Math.PI) / 8)}
+                y2={100 + 95 * Math.sin((i * Math.PI) / 8)}
+              />
+            ))}
+          </g>
+        </svg>
+      </div>
+
+      {/* Mascot Image Showcase */}
       <motion.div
         animate={{
-          y: [0, -12, 0],
-          rotate: [-1, 1, -1],
+          y: [0, -14, 0],
+          rotate: [-1.5, 1.5, -1.5],
         }}
         transition={{
-          duration: 3.5,
+          duration: 3.8,
           repeat: Infinity,
           ease: "easeInOut",
         }}
@@ -28,8 +58,8 @@ function HeroMascot({ sizeClass }: { sizeClass: string }) {
           src="/images/mascot_stand.png"
           alt="Maskot SERENTAK 5.0 X RBB 2026"
           fill
-          sizes="(max-width: 768px) 320px, 550px"
-          className="object-contain drop-shadow-[0_25px_40px_rgba(0,0,0,0.8)] transition-transform duration-300 group-hover:scale-105"
+          sizes="(max-width: 768px) 500px, (max-width: 1200px) 700px, 900px"
+          className="object-contain drop-shadow-[0_25px_50px_rgba(0,0,0,0.9)] scale-[1.28] transition-transform duration-300 group-hover:scale-[1.33]"
           priority
         />
       </motion.div>
@@ -39,20 +69,20 @@ function HeroMascot({ sizeClass }: { sizeClass: string }) {
 
 export default function HeroSection({ onOpenRegister, onOpenGuidebook }: HeroSectionProps) {
   return (
-    <section id="home" className="relative min-h-screen pt-28 pb-20 md:pt-36 md:pb-28 flex items-center justify-center bg-[#5A0B14] text-[#F7F1E8] overflow-hidden border-b border-[#C5A059]/40">
+    <section id="home" className="relative pt-16 sm:pt-20 md:pt-20 lg:pt-22 pb-8 md:pb-12 flex flex-col justify-start items-center bg-[#5A0B14] text-[#F7F1E8] overflow-hidden border-b border-[#C5A059]/40">
       {/* Main Container */}
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 z-10 w-full">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 items-center">
 
           {/* Left Column: Headline, Tagline, [Mobile Mascot], Description, CTA Buttons */}
-          <div className="lg:col-span-7 flex flex-col items-center lg:items-start text-center lg:text-left">
+          <div className="lg:col-span-6 flex flex-col items-center lg:items-start text-center lg:text-left">
 
             {/* 1. Main Event Title (Huge Editorial Typography) */}
             <motion.h1
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.1 }}
-              className="font-heading text-5xl sm:text-7xl lg:text-7xl xl:text-8xl text-[#C5A059] tracking-tight leading-none mb-4 uppercase drop-shadow-md"
+              className="font-heading text-5xl sm:text-7xl lg:text-7xl xl:text-8xl text-[#C5A059] tracking-tight leading-none mb-2 uppercase drop-shadow-md"
             >
               SERENTAK 5.0 X RBB 2026
             </motion.h1>
@@ -62,7 +92,7 @@ export default function HeroSection({ onOpenRegister, onOpenGuidebook }: HeroSec
               initial={{ opacity: 0, y: 15 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
-              className="my-3 py-2 border-y border-[#C5A059]/40 w-full"
+              className="my-1.5 py-1 border-y border-[#C5A059]/40 w-full"
             >
               <p className="font-subheading text-xl sm:text-2xl md:text-3xl font-bold text-[#F7F1E8] tracking-wide uppercase">
                 "Politrik: Seni Berkuasa dengan Propaganda"
@@ -74,9 +104,9 @@ export default function HeroSection({ onOpenRegister, onOpenGuidebook }: HeroSec
               initial={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.7, delay: 0.25 }}
-              className="lg:hidden flex flex-col items-center justify-center my-4 w-full"
+              className="lg:hidden flex flex-col items-center justify-center my-3 w-full"
             >
-              <HeroMascot sizeClass="w-64 h-64 sm:w-80 sm:h-80" />
+              <HeroMascot sizeClass="w-[75vw] h-[90vw] max-w-[320px] max-h-[400px] sm:w-[380px] sm:h-[460px] md:w-[420px] md:h-[520px]" />
             </motion.div>
 
             {/* 4. Description */}
@@ -84,7 +114,7 @@ export default function HeroSection({ onOpenRegister, onOpenGuidebook }: HeroSec
               initial={{ opacity: 0, y: 15 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.3 }}
-              className="font-body text-sm sm:text-base md:text-lg text-[#F7F1E8]/90 leading-relaxed mb-8 mt-3 max-w-2xl text-balance"
+              className="font-body text-sm sm:text-base md:text-lg text-[#F7F1E8]/90 leading-relaxed mb-6 mt-2 max-w-2xl text-balance"
             >
               Program kerja Departemen Kajian Aksi dan Strategis Ormawa Eksekutif PKU yang menghadirkan ruang kompetisi mahasiswa IPB, literasi, dan ekspresi kritis mahasiswa melalui ajang lomba mahasiswa 2026.
             </motion.p>
@@ -94,7 +124,7 @@ export default function HeroSection({ onOpenRegister, onOpenGuidebook }: HeroSec
               initial={{ opacity: 0, y: 15 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.4 }}
-              className="font-subheading flex flex-col sm:flex-row items-center gap-4 w-full sm:w-auto mb-4"
+              className="font-subheading flex flex-col sm:flex-row items-center gap-4 w-full sm:w-auto mb-2"
             >
               <a
                 href="https://ipb.link/registrasi-lomba-serentak-2026"
@@ -121,9 +151,9 @@ export default function HeroSection({ onOpenRegister, onOpenGuidebook }: HeroSec
             initial={{ opacity: 0, scale: 0.95, x: 20 }}
             animate={{ opacity: 1, scale: 1, x: 0 }}
             transition={{ duration: 0.7, delay: 0.2 }}
-            className="hidden lg:flex lg:col-span-5 flex-col items-center justify-center relative py-4"
+            className="hidden lg:flex lg:col-span-6 flex-col items-center justify-center relative py-0"
           >
-            <HeroMascot sizeClass="w-80 h-80 sm:w-[450px] sm:h-[450px] lg:w-[500px] lg:h-[500px]" />
+            <HeroMascot sizeClass="w-[380px] h-[460px] lg:w-[460px] lg:h-[560px] xl:w-[520px] xl:h-[620px]" />
           </motion.div>
 
         </div>
