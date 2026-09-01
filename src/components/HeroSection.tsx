@@ -9,23 +9,23 @@ interface HeroSectionProps {
   onOpenGuidebook: () => void;
 }
 
-function HeroMascot({ sizeClass }: { sizeClass: string }) {
+function HeroMascot({ sizeClass, imageScaleClass = "scale-100" }: { sizeClass: string; imageScaleClass?: string }) {
   return (
     <div className="relative flex flex-col items-center justify-center w-full">
-      {/* Background Glow & Aura */}
-      <div className="absolute inset-0 m-auto w-[85%] h-[85%] rounded-full bg-gradient-to-tr from-[#C5A059]/40 via-[#9E1B28]/30 to-transparent blur-3xl pointer-events-none scale-125 -z-10" />
+      {/* Background Glow & Aura (Desktop Only) */}
+      <div className="hidden lg:block absolute inset-0 m-auto w-[85%] h-[85%] rounded-full bg-gradient-to-tr from-[#C5A059]/40 via-[#9E1B28]/30 to-transparent blur-3xl pointer-events-none scale-125 -z-10" />
 
-      {/* Rotating Ornate Golden Decorative Rings */}
+      {/* Rotating Ornate Golden Decorative Rings (Desktop Only) */}
       <motion.div
         animate={{ rotate: 360 }}
         transition={{ duration: 40, repeat: Infinity, ease: "linear" }}
-        className="absolute inset-0 m-auto w-[80%] h-[80%] rounded-full border border-dashed border-[#C5A059]/40 pointer-events-none -z-10 flex items-center justify-center"
+        className="hidden lg:flex absolute inset-0 m-auto w-[80%] h-[80%] rounded-full border border-dashed border-[#C5A059]/40 pointer-events-none -z-10 items-center justify-center"
       >
         <div className="w-[80%] h-[80%] rounded-full border border-dotted border-[#C5A059]/30" />
       </motion.div>
 
-      {/* Radial Sunburst Rays */}
-      <div className="absolute inset-0 m-auto w-[85%] h-[85%] opacity-25 pointer-events-none -z-10 flex items-center justify-center">
+      {/* Radial Sunburst Rays (Desktop Only) */}
+      <div className="hidden lg:flex absolute inset-0 m-auto w-[85%] h-[85%] opacity-25 pointer-events-none -z-10 items-center justify-center">
         <svg viewBox="0 0 200 200" className="w-full h-full text-[#C5A059]">
           <g fill="none" stroke="currentColor" strokeWidth="0.6" strokeDasharray="2 3">
             {[...Array(16)].map((_, i) => (
@@ -59,7 +59,7 @@ function HeroMascot({ sizeClass }: { sizeClass: string }) {
           alt="Maskot SERENTAK 5.0 X RBB 2026"
           fill
           sizes="(max-width: 768px) 500px, (max-width: 1200px) 700px, 900px"
-          className="object-contain drop-shadow-[0_25px_50px_rgba(0,0,0,0.9)] scale-[1.28] transition-transform duration-300 group-hover:scale-[1.33]"
+          className={`object-contain drop-shadow-[0_25px_50px_rgba(0,0,0,0.9)] ${imageScaleClass} transition-transform duration-300 group-hover:scale-105`}
           priority
         />
       </motion.div>
@@ -69,7 +69,7 @@ function HeroMascot({ sizeClass }: { sizeClass: string }) {
 
 export default function HeroSection({ onOpenRegister, onOpenGuidebook }: HeroSectionProps) {
   return (
-    <section id="home" className="relative pt-16 sm:pt-20 md:pt-20 lg:pt-22 pb-8 md:pb-12 flex flex-col justify-start items-center bg-[#5A0B14] text-[#F7F1E8] overflow-hidden border-b border-[#C5A059]/40">
+    <section id="home" className="relative pt-22 sm:pt-24 md:pt-20 lg:pt-22 pb-8 md:pb-12 flex flex-col justify-start items-center bg-[#5A0B14] text-[#F7F1E8] overflow-hidden border-b border-[#C5A059]/40">
       {/* Main Container */}
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 z-10 w-full">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 items-center">
@@ -99,14 +99,14 @@ export default function HeroSection({ onOpenRegister, onOpenGuidebook }: HeroSec
               </p>
             </motion.div>
 
-            {/* 3. Mobile Mascot Showcase (Order: Judul -> Tema -> Mascot -> Deskripsi -> CTA) */}
+            {/* 3. Mobile Mascot Showcase (Posisi: Judul -> Tema -> Mascot -> Deskripsi -> CTA) */}
             <motion.div
               initial={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.7, delay: 0.25 }}
-              className="lg:hidden flex flex-col items-center justify-center my-3 w-full"
+              className="lg:hidden flex flex-col items-center justify-center my-4 mx-auto w-full"
             >
-              <HeroMascot sizeClass="w-[75vw] h-[90vw] max-w-[320px] max-h-[400px] sm:w-[380px] sm:h-[460px] md:w-[420px] md:h-[520px]" />
+              <HeroMascot sizeClass="w-[250px] h-[310px] sm:w-[280px] sm:h-[350px] md:w-[320px] md:h-[390px]" imageScaleClass="scale-100" />
             </motion.div>
 
             {/* 4. Description */}
@@ -153,7 +153,7 @@ export default function HeroSection({ onOpenRegister, onOpenGuidebook }: HeroSec
             transition={{ duration: 0.7, delay: 0.2 }}
             className="hidden lg:flex lg:col-span-6 flex-col items-center justify-center relative py-0"
           >
-            <HeroMascot sizeClass="w-[380px] h-[460px] lg:w-[460px] lg:h-[560px] xl:w-[520px] xl:h-[620px]" />
+            <HeroMascot sizeClass="w-[380px] h-[460px] lg:w-[440px] lg:h-[540px] xl:w-[500px] xl:h-[600px]" imageScaleClass="scale-100" />
           </motion.div>
 
         </div>
